@@ -1,0 +1,83 @@
+ProductTester
+Question:
+Create a Java class called Product with instance variables id, name, and price.
+•	Implement a parameterized constructor to initialize all variables.
+•	Override the toString() method to return a string in the format:
+"Product[ID=..., Name=..., Price=...]"
+•	create a class named ProductTester it contain  main method, create a Product object and print it to demonstrate the overridden toString().
+
+
+Testcase 1:-
+Enter Product ID: 101
+Enter Product Name: Laptop
+Enter Product Price: 75000.0
+
+Expected Output:-
+Product[ID=101, Name=Laptop, Price=75000.0]
+Sample Input
+101
+Laptop
+75000
+Sample Output
+Product[ID=101, Name=Laptop, Price=75000.0]
+
+================================================
+EmployeeTesterELC
+Constructor Overloading and this Keyword
+Question:
+Write a Java class named Employee with instance variables name and salary.
+•	Implement a default constructor that sets name to "Unknown" and salary to 0.
+•	Implement a parameterized constructor to initialize both variables.
+•	Use the this keyword to distinguish between instance variables and parameters.
+•	Write a method display() to print the employee details.
+
+Testcase 1:-
+
+Employee Management System
+1. Create employee using default constructor
+2. Create employee using parameterized constructor
+Enter your choice: 1
+
+Expected Output :-
+
+Employee Name: Unknown
+Employee Salary: 0.0
+-------------------------------
+Testcase 2:-
+
+Employee Management System
+1. Create employee using default constructor
+2. Create employee using parameterized constructor
+Enter your choice: 2
+Enter employee name: James
+Enter employee salary: 45000
+Expected Output :-
+
+Employee Name: James
+Employee Salary: 45000.0
+
+Sample Input
+1
+Sample Output
+Employee Name: Unknown
+Employee Salary: 0.0
+
+Input:
+2 James 45000.0
+
+Expected Output:
+Employee Name: James
+Employee Salary: 45000.0
+
+Input:
+3
+
+Expected Output:
+Invalid choice
+
+
+Input:
+2 Gress -45000
+
+Expected Output:
+Invalid salary.

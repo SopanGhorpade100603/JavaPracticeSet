@@ -1,0 +1,389 @@
+
+                       2D Array / Jagged Array / Multidiamentional Array 
+                       ###################################################
+
+
+NOTE : 
+======  
+
+-> If we want's to perform operation on 2D/Multidiamentional array using Arrays class predifined methods, then Arrays class providing only below 3 methods to work with 2D/multidiamentional array.
+   A) Arrays.deepToString()
+   B) Arrays.deepEquals()
+   C) Arrays.deepHashCode()
+
+-> Apart from this 3 methods of Arrays class is designed for 1D array only.
+
+-> So you can iterate one by one array object from 2D/Multidiamentional array and can use remaining methods of Arrays class to perform operation.
+
+For Example : Sort given 2D Array
+-------------
+
+             int arr[][] = { { 4, 5, 1 }, { 8, 1, 4 }, { 11, 8, 0 } };
+
+// LOGIC 1 :
+
+//	    for(int i=0;i<arr.length;i++)
+//	    {
+//	    	Arrays.sort(arr[i]);  //   <--- iterating one by one array object from 2D Array to perform sorting Operation.
+//	    }
+//	    
+//	    System.out.println(Arrays.deepToString(arr));
+
+
+// LOGIC 2 :
+		for (int i = 0; i < arr.length; i++) {
+			int x[] = arr[i];              //   <--- iterating one by one array object from 2D Array to perform sorting Operation.
+
+			for (int j = 0; j < x.length; j++) {
+				for (int k = j + 1; k < x.length; k++) {
+					if (x[j] > x[k]) {
+						int t = x[j];
+						x[j] = x[k];
+						x[k] = t;
+					}
+				}
+			}
+		}
+
+		System.out.println(Arrays.deepToString(arr));
+
+	  
+
+----------------------------------------------------
+
+Que 1) 
+======
+
+Write a java program to create 2D array dynamically and sort(Sorting row by row).
+
+Example: 
+
+Input : 
+arr[][] = { {5, 4, 7},
+            {1, 3, 8},
+            {9, 2, 6} }
+
+
+Output :
+         4 5 7
+         1 3 8
+         2 6 9
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter size of array");
+		int size = sc.nextInt();
+
+		int arr[][] = new int[size][size];
+
+		System.out.println("Enter " + (size * size) + " Elements into array");
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = sc.nextInt();
+			}
+		}
+
+		// Sort Logic : 1
+
+//		for(int i=0;i<arr.length;i++)
+//		{
+//			Arrays.sort(arr[i]);
+//		}
+//		System.out.println(Arrays.deepToString(arr));
+
+		// Sort Logic : 2
+
+		for (int i = 0; i < arr.length; i++) {
+			int x[] = arr[i];
+
+			for (int j = 0; j < x.length; j++) {
+				for (int k = j + 1; k < x.length; k++) {
+					if (x[j] > x[k]) {
+						int t = x[j];
+						x[j] = x[k];
+						x[k] = t;
+					}
+				}
+			}
+		}
+		System.out.println(Arrays.deepToString(arr));
+
+	}
+}
+
+
+----------------------------------------------------
+
+Que 2) 
+======
+
+Write a java program to create 2D Jaagged array dynamically and sort.(Sorting row by row)
+
+Example: 
+
+Input : 
+arr[][] = { {5, 4, 7, 8},
+            {1, 3, 8, 9, 100},
+            {9, 2} }
+
+
+Output :
+         4 5 7 8
+         1 3 8 9 100
+         2 9
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter size of array");
+		int size = sc.nextInt();
+
+		int arr[][] = new int[size][]; // <--- Jagged array
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("Enter size for arr[" + i + "] array");
+			int s = sc.nextInt();
+			arr[i] = new int[s];
+		}
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("Enter " + arr[i].length + " Elements");
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = sc.nextInt();
+			}
+		}
+
+		// Sort Logic : 1
+
+//		for(int i=0;i<arr.length;i++)
+//		{
+//			Arrays.sort(arr[i]);
+//		}
+//		System.out.println(Arrays.deepToString(arr));
+
+		// Sort Logic : 2
+
+		for (int i = 0; i < arr.length; i++) {
+			int x[] = arr[i];
+
+			for (int j = 0; j < x.length; j++) {
+				for (int k = j + 1; k < x.length; k++) {
+					if (x[j] > x[k]) {
+						int t = x[j];
+						x[j] = x[k];
+						x[k] = t;
+					}
+				}
+			}
+		}
+		System.out.println(Arrays.deepToString(arr));
+
+	}
+}
+
+
+----------------------------------------------------
+
+
+Que 3 :
+=======
+
+Write a java program to search a given numbers location from a 2D array.
+Input : mat[][] = { {5, 4, 7},
+                    {1, 3, 8},
+                    {2, 9, 6} }
+Enter element to be searched : 3
+
+Output : 3 is present at (1,1) location
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 5, 4, 7 }, { 1, 3, 8 }, { 2, 9, 6 } };
+		int ele = 100;
+		boolean flag = false;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				if (arr[i][j] == ele) {
+					System.out.println(i + "," + j);
+					flag = true;
+					break;
+				}
+			}
+			if (flag)
+				break;
+		}
+
+		if (flag == false)
+			System.out.println("Not found");
+
+	}
+}
+
+
+
+============================================
+
+
+Que 4 :
+=======
+
+Write a java program to find the sum of all elements from a given 2D array.
+Input : mat[][] = { {5, 4, 7},
+                    {1, 3, 8},
+                    {2, 9, 6}}
+Output : Sum of all element is : 45
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 5, 4, 7 }, { 1, 3, 8 }, { 2, 9, 6 } };
+		
+		int sum=0;
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				sum=sum+arr[i][j];
+			}
+		}
+		
+		System.out.println("Sum of all element is :"+sum);
+	}
+}
+	
+
+============================================	
+
+Que 5 :
+=======
+
+Write a java program to print the max number of each rows from a 2D array.
+Input : mat[][] = { {5, 4, 7},
+                    {1, 3, 8},
+                    {2, 9, 6} }
+Output : max number of 1 row : 7
+         max number of 2 row : 8 
+         max number of 3 row : 9
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 5, 4, 7 }, { 1, 3, 8 }, { 2, 9, 6 } };
+
+		for (int i = 0; i < arr.length; i++) {
+			int x[] = arr[i];
+			int max = x[0];
+			for (int j = 0; j < x.length; j++) {
+				if (x[j] > max)
+					max = x[j];
+			}
+			System.out.println("max number of " + (i + 1) + " row :" + max);
+		}
+	}
+}
+
+
+============================================
+
+Que 6 :
+=======
+
+Sort the given matrix
+Given a n x n matrix. The problem is to sort the given matrix in strict order. Here strict order means that the matrix is sorted in a way such that all elements in a row are sorted in increasing order and for row ‘i’, where 1 <= i<= n-1, the first element of row ‘i’ is greater than or equal to the last element of row ‘i-1’.
+
+Examples: 
+
+Input : mat[][] = { {5, 4, 7},
+                    {1, 3, 8},
+                    {2, 9, 6} }
+
+
+Output :
+         1 2 3
+         4 5 6
+         7 8 9
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 5, 4, 7 }, { 1, 3, 8 }, { 2, 9, 6 } };
+		
+		int x=0;
+		int l = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			l=l+arr[i].length;
+		}
+
+		int brr[]=new int[l];
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				brr[x++]=arr[i][j];
+			}
+		}
+		
+		Arrays.sort(brr);
+		x=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				arr[i][j]=brr[x++];
+			}
+		}
+		
+		System.out.println(Arrays.deepToString(arr));
+		
+	}
+}
+
+

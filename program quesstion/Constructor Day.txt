@@ -1,0 +1,392 @@
+EmployeeTestELC
+Create an Employee class (BLC Class)
+
+Attributes/Properties :[private access modifier for all the fields]
+
+names		 Type
+--------	---------------		
+ firstName   	:String   
+ lastName      	:String  
+ employeeId 	:int  
+ salary  	:double  
+ NoOfProject 	:int 
+
+Implement parameterized constructors to initialize these properties.
+
+Generate toString() method to print Object Properties.
+
+implement calculateSalary() method that will add extra ammount in salary based on NoOfProject.
+
+Return Type     : void
+Access modifier :public
+
+NoOfProject is more than 5 and less than 10 then add 5000
+NoOfProject is more than 10 and less that 20 then add 10000
+NoOfProject is more than 20 then add 15000
+
+Take another class EmployeeTestELC (ELC Class) which is having main method and instantiate the Employee object and execute the methods.
+Sample Input
+John
+Deo
+101
+50000.0
+7
+Sample Output
+Employee [firstName=John, lastName=Deo, employeeId=101, salary=55000.0, noOfProject=7]
+================
+import java.util.Scanner;
+public class EmployeeTestELC
+{
+  public static void main(String []args)
+   {
+   Scanner sc=new Scanner(System.in);
+   String eFirstName=sc.nextLine();
+   String eLastName=sc.nextLine();
+   int eId=Integer.parseInt(sc.nextLine());
+   double eSalary=Double.parseDouble(sc.nextLine());
+   int eProject=Integer.parseInt(sc.nextLine());
+     if(eProject<0)
+     {
+        System.out.println("Number of projects cannot be negative");
+        System.exit(0);
+     }
+
+       Employee e=new Employee(eFirstName,eLastName,eId,eSalary,eProject);
+      e.calculateSalary();
+       System.out.println(e);
+
+    }
+}
+
+ class Employee
+{
+    private String firstName;
+    private String lastName;
+    private int employeeId;
+    private double salary;
+    private int noOfProject;
+
+    public Employee(String firstName,String lastName,int employeeId,double salary,int noOfProject)
+    {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.employeeId=employeeId;
+        this.salary=salary;
+        this.noOfProject=noOfProject;
+    }
+   public void calculateSalary()
+   {
+      
+     if(noOfProject>5&&noOfProject<10)
+     {
+       this. salary+=5000;
+     }
+     else if(noOfProject>10&&noOfProject<20)
+     {
+       this. salary+=10000;
+     }
+     else if(noOfProject>20)
+     {
+        this.salary+=15000;
+     }
+   }
+    public String toString()
+    {
+        return "Employee [firstName="+firstName+", lastName="+lastName+", employeeId="+employeeId+", salary="+salary+", noOfProject="+noOfProject+"]";  
+          }
+}
+
+=======================================================================================================================================
+BatterTest
+Class Batter is given to you. Add below details to the class
+
+ 1. Instance variables:
+ batterName: String,
+ batterRuns: int,
+ batterMatches: int,
+ batting_avg: double.
+
+2. Method batterDetails() : public void
+
+Create a method name called batterDetails() that accepts name, runs, matches.
+
+Method name: batterDetails : public void
+
+ 3. Create below public methods,
+ Method name: computeBattingAverage
+ Return type: void
+
+ This method should print the batting average of the batter by dividing run with matches.
+
+ Input: 
+
+ Name: "Abhishek Sharma"
+ Runs: 18000
+ Matches: 463
+
+
+
+ Output:
+ Name: Abhishek Sharma
+ Batting_Avg: 38.87689
+
+ Note: a. If runs or matches values are negative print 'Error'.
+
+ b. If runs are greater than 0 when matches are 0 print 'Error'.
+
+ Method name: getStatistics
+ Return type: void
+ This method should print the details of the batter.
+
+ Input: 
+Name: "Abhishek Sharma"
+Runs: 18000
+Matches: 463
+
+ Output:
+ Name: Abhishek Sharma
+ Runs: 18000
+ Matches: 463
+
+
+ Note: a. If runs or matches values are negative print 'Error'.
+ b. If runs are greater than 0 when matches are 0 print 'Error'.
+
+ Given an ELC(Executable Logic class) class for Testing that contains main method. Use this class to test your code.
+====================================================================================================================================================
+BookELC
+Design a Book printing System
+
+Create a class  Book (BLC Class)
+
+Attributes/Properties :[private access modifier for all the fields]
+
+Name		     data type 
+-------		      -----------
+title                 :String
+author       	      :author
+price 		      :double
+
+Implement a parameterized constructor to initialize all the fields
+
+Methods :
+Genearte toString() method to print object properties.
+
+Method Name		:applyDiscount(double discountPercentage)
+Return type		:void
+Acess modifier	        :public
+
+
+Take class BookELC (ELC Class) which having in main method  and execute the main method
+
+
+Test Cases :
+--------------
+
+Test Case 1:
+ Applying Invalid Discount (Negative)
+
+Error: Invalid discount percentage.
+Title: 1984
+Author: George Orwell
+Price: 14.391
+
+Test Case 2: Creating Book with Negative Price
+Title: Negative Price Book
+Author: No Author
+Price: -5.0
+
+
+Sample Input
+1984
+George Orwell
+14391
+5
+Sample Output
+Title: 1984
+Author: George Orwell
+Price: 13671.45
+=====================================================================================================================
+BowlerTest
+Create a BLC(Business Logic Class) called Bowler. Add below details to the class. 
+
+1. Instance variables:
+ bowlerName: String
+ bowlerWickets: int
+ bowlerMatches: int,
+ balls_bowled: int,
+ runs_conceded: int. 
+
+2. Method : bowlerDetails() : public void
+
+Create a method name called bowlerDetails() that accepts name, wickets, matches, ballsbowled and runsConceded as a parameter to initialize the field.
+
+Method name: bowlerDetails : public void
+
+3. Create below public methods,
+ Method name: computeBowlingAverage
+ Return type: void
+
+ This method should print the bowling average of the bowler by dividing runs_conceded with wickets.
+
+formula :-    float bowlingAvg = (float) runs_conceded / bowlerWickets;
+
+ Input:
+ name = "Abhishek Sharma",
+ wickets = 10,
+ matches = 5,
+ balls_bowled = 750,
+ runs_conceded 463.
+
+ Output:
+ Name: Abhishek Sharma
+ bowling_avg=46.3
+ Note: a. If any values are negative print 'Error'.
+
+ b. If runs_conceded or balls_bowled are greater than 0 when matches are 0 print 'Error'.
+
+ Method name: computeStrikeRate
+ Return type: void
+
+This method should print the Strike Rate of the bowler by dividing runs_conceded with balls_bowled.
+
+formula:-   float strikeRate = (float) runs_conceded / balls_bowled;
+
+ Input:
+ name = "Abhishek Sharma",
+ wickets = 10,
+ matches = 5,
+ balls_bowled = 750,
+ runs_conceded 463.
+
+ Output:
+ Name: Abhishek Sharma
+ Strike_rate=0.61733335
+ Note: a. If any values are negative print 'Error'.
+
+ b. If runs_conceded or balls_bowled are greater than 0 when matches are 0 print 'Error'.
+
+ Method name: showStatistics
+ Return type: void
+
+ This method should print the details of the batter.
+ Input:
+ name = "Sachin",
+ wickets = 10,
+ matches = 5,
+ balls_bowled = 750,
+ runs_conceded 463.
+
+ Output:
+ Name=Sachin
+ wickets=10
+ matches=5
+
+ balls_bowled=750
+ runs_conceded=463
+
+ Note: a. If any values are negative print 'Error'.
+
+ b. If runs_conceded or balls_bowled are greater than 0 when matches are 0 print 'Error'.
+
+ An ELC(Executable Logic Class) Test that contains main method. Use this class to test your code.
+
+===============================
+Test Case 1:-
+
+Enter Bowler Name: Abhishek Sharma
+Enter Wickets: 10
+Enter Matches: 5
+Enter Balls Bowled: 750
+Enter Runs Conceded: 463
+
+Expected Output:-
+---------------------
+Name=Abhishek Sharma
+wickets=10
+matches=5
+balls_bowled=750
+runs_conceded=463
+Name: Abhishek Sharma
+bowling_avg=46.3
+Name: Abhishek Sharma
+Strike_rate=0.61733335
+
+===============================
+Test Case 2:-
+
+Enter Bowler Name: Raj
+Enter Wickets: -2
+Enter Matches: 45
+Enter Balls Bowled: 20
+Enter Runs Conceded: 24
+
+Expected Output:-
+---------------------
+Error
+Sample Input
+Abhishek Sharma
+10
+5
+750
+463
+Sample Output
+Name=Abhishek Sharma
+wickets=10
+matches=5
+balls_bowled=750
+runs_conceded=463
+Name: Abhishek Sharma
+bowling_avg=46.3
+Name: Abhishek Sharma
+Strike_rate=0.61733335
+===============================================================
+CarELC
+
+Create a program to understand the use of Constructor in java program.
+
+Create a BLC class called Car
+
+Attributes/Properties :[private access modifier for all the fields]
+
+names		 Type
+--------	---------------		
+ model   	:String   
+ year   	:int  
+ price  	:double  
+ 
+Implement a parameterized constructors to initialize these properties with parameter variable.
+
+Generate toString() method to print Object properties.
+
+Take another class CarELC (ELC Class) which is having main method and instantiate the Car object to get the desired output
+
+Test Cases for Output :
+------------------------
+Enter Car Model :Toyota
+Enter Car Manufacturing year :2025
+Enter Car Price :1500000
+Car [model=Toyota, year=2025, price=1500000.0]
+
+
+Test Case for Input Validation :
+--------------------------------
+Test Case 1 :
+
+Enter Car Model :Toyota
+Enter Car Manufacturing year :2010
+Enter Car Price :120000
+year must be greater than 2010
+
+Test Case 2 :
+
+Enter Car Model :BMW
+Enter Car Manufacturing year :2024
+Enter Car Price :-1000000
+Price must be positive integer
+Sample Input
+Toyota
+2025
+150000
+Sample Output
+Car [model=Toyota, year=2025, price=150000.0]

@@ -1,0 +1,299 @@
+
+Que 1 :
+========
+
+Write a java program to merge two array and return new result array.
+
+Example :
+arr1[] = {1, 2, 3};
+arr2[] = {4 ,5, 6, 7, 8};
+
+Output :
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static int[] mergeArrays(int a[], int b[]) {
+		int x = 0;
+		int res[] = new int[a.length + b.length];
+
+		for (int i = 0; i < a.length; i++) {
+			res[x++] = a[i];
+		}
+
+		for (int i = 0; i < b.length; i++) {
+			res[x++] = b[i];
+		}
+
+		return res;
+
+	}
+
+	public static void main(String[] args) {
+
+		int arr1[] = { 1, 2, 3 };
+		int arr2[] = { 4, 5, 6, 7, 8 };
+		int res[] = Test1.mergeArrays(arr1, arr2);
+		System.out.println(Arrays.toString(res));
+
+	}
+}
+
+===================================================
+
+Que 2 :
+=======
+
+Write a java program to store first N prime elements into the array and return result array.
+
+Example :
+N= 5
+Output : [2, 3, 5, 7, 11]
+
+
+Example :
+N= 7
+Output : [2, 3, 5, 7, 11, 13, 17]
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static int[] getPrime(int n) {
+
+		int arr[] = new int[n];
+		int x = 0;
+		int z = 0;
+		for (int i = 2;; i++) // 2 3 5 7 11
+		{
+			int c = 0;
+			for (int j = 1; j <= i; j++) {
+				if (i % j == 0)
+					c++; // 2
+			}
+			if (c == 2) {
+				arr[x++] = i;
+				z++;
+			}
+
+			if (z == n)
+				break;
+		}
+
+		return arr;
+
+	}
+
+	public static void main(String[] args) {
+
+		int res[] = Test1.getPrime(10);
+		System.out.println(Arrays.toString(res));
+
+	}
+}
+
+===================================================
+
+Arrays.copyOf() method :
+=========================
+
+-> Arrays.copyOf() used to copy one array elements into another array.
+
+-> Used to create growable array.
+
+-> this method will return new copied array object.
+
+-> syntax : public static int[] copyOf(int[] original,int newLength)
+
+            original − This is the array to be copied.
+
+            newLength − This is the length of the copy to be returned.
+
+
+
+Example 1 : [working with user defined logic]
+-----------------------------------------------
+
+Write a java program to copy array elements and return new array as result.
+
+Example :
+arr[] = {1, 2, 3, 4, 5};
+
+Output : [1, 2, 3, 4, 5]
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static int[] copyArray(int arr[], int n) {
+
+		int brr[] = new int[n];
+
+		for (int i = 0; i < arr.length; i++) {
+			brr[i] = arr[i];
+		}
+
+		return brr;
+
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5 };
+		System.out.println(Arrays.toString(arr));
+		arr = Test1.copyArray(arr, 7);
+		System.out.println(Arrays.toString(arr));
+
+	}
+}
+
+Output : [ 1, 2, 3, 4, 5 , 0, 0 ]
+
+
+
+Example 2 : [working Arrays.copyOf() predifined method]
+---------------------------------------------------------
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                System.out.println("Origional Array : " +Arrays.toString(arr));
+		int res[] = Arrays.copyOf(arr, 15);
+		System.out.println("Copied Array : " +Arrays.toString(res));
+
+	}
+}
+
+Output :
+Origional Array : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+Copied Array :    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0 ]
+
+===================================================
+
+Arrays.copyOfRange() method :
+-----------------------------
+
+-> Arrays.copyOfRange() method used to copy one array elements into another array based on given rage.
+
+-> Used to create growable array.
+
+-> this method will return new copied array object.
+
+-> syntax : public static int[] copyOfRange(int[] original, int from, int to)
+
+            original − This is the array from which a range is to to be copied.
+
+            from − This is the initial index of the range to be copied, inclusive.
+
+            to − This is the final index of the range to be copied, exclusive.
+
+
+
+Example 1 : [working with user defined logic]
+-----------------------------------------------
+Write a java program to copy array elements based on range of indexes, and return new array as result.
+
+Test Case 1:
+------------
+arr[] = {1, 2, 3, 4, 5};
+from = 0
+to = 5
+
+Output : [1, 2, 3, 4, 5]
+
+
+Test Case 2:
+------------
+arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+from = 4
+to = 8
+
+Output : [5, 6, 7, 8]
+
+
+Test Case 3:
+------------
+arr[] = {1, 2, 3, 4, 5};
+from = 2
+to = 8
+
+Output : [3, 4, 5, 0, 0, 0]
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static int[] copyOfRangeArray(int arr[], int n1, int n2) {
+
+		int brr[] = new int[n2 - n1];
+		int x = 0;
+
+		for (int i = n1; i <= n2 - n1; i++) {
+			if (i >= arr.length) {
+				break;
+			}
+
+			brr[x++] = arr[i];
+
+		}
+
+		return brr;
+
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		System.out.println(Arrays.toString(arr));
+		arr = Test1.copyOfRangeArray(arr, 2, 15);
+		System.out.println(Arrays.toString(arr));
+		
+
+	}
+}
+
+Output : 
+[3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0]
+
+=====================================================
+
+Example 2 : [working Arrays.copyOfRange() predifined method]
+---------------------------------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                System.out.println("Origional Array : " +Arrays.toString(arr));
+
+		int res[] = Arrays.copyOfRange(arr, 2, 15);
+		System.out.println("Origional Array : " +Arrays.toString(res));
+	}
+}
+
+Output : [3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0]
+
+===================================================

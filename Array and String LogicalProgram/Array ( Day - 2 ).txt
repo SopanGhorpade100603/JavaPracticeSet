@@ -1,0 +1,433 @@
+0) Working With Pimitive type (int array) :
+============================================
+
+Example 1 : [Using braces]
+---------------------------
+import java.util.Arrays;
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+//		 Array using braces
+		int arr[] = { 1, 2, 3, 4, 5 };
+
+//		  APPROACH - 1 (Iterating array using for loop)
+		for (int i = 0; i < arr.length; i++)
+			System.out.print(arr[i] + " ");
+
+//		  APPROACH - 2 (Iterating array using for-each loop)
+		for (int i : arr)
+			System.out.print(i + " ");
+
+//		  APPROACH - 3 (Printing array using Arrays.toString() method)
+		System.out.println(Arrays.toString(arr));
+
+	}
+}
+
+-------------------------------------------------------
+
+Example 2 : [Using new keyword]
+--------------------------------
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+//		 Array using new keyword
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter size of array");
+		int size = sc.nextInt();
+		int arr[] = new int[size];
+		System.out.println("Enter " + size + " Integer elements int array");
+
+//      reading elements and storing into the array 		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+//		  APPROACH - 1 (Iterating array using for loop)
+		for (int i = 0; i < arr.length; i++)
+			System.out.print(arr[i] + " ");
+
+//		  APPROACH - 2 (Iterating array using for-each loop)
+		for (int i : arr)
+			System.out.print(i + " ");
+
+//		  APPROACH - 3 (Printing array using Arrays.toString() method)
+		System.out.println(Arrays.toString(arr));
+
+	}
+}
+
+###########################################################
+
+1) Working with Object type :  
+==============================
+
+Example 1 : [Using braces]
+---------------------------
+
+import java.util.Arrays;
+
+class Employee {
+	int id;
+	String name;
+
+	public Employee(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + "]";
+	}
+
+}
+
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+
+		Object arr[] = { 1, 10.5, "java", true, 'A', new Employee(1, "raj"), 2, 3, 4 };
+
+		for (int i = 0; i < arr.length; i++)
+			System.out.println(arr[i]);
+
+		for (Object obj : arr)
+			System.out.println(obj);
+
+		System.out.println(Arrays.toString(arr));
+
+		int sum = 0;
+
+		for (Object o : arr) {
+			if (o instanceof Integer) {
+				sum = sum + (int) o;
+			}
+		}
+		System.out.println(sum);
+	}
+
+}
+
+
+NOTE :
+-> if array is homogeneous array then we can store values dynamically into array.  
+-> if array is heterogeneous then we can not store value dynamically into the array. 
+-> and Using new keyword we can just create object type array/heterogeneous array but we can not store values dynamically.
+-> using braces is best choice to create and store values into heterogeneous array.      
+
+
+###########################################################
+
+2) Working with class type array :    
+===================================
+
+Example 1 : [using braces]
+---------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+class Employee {
+
+	int eid;
+	String ename;
+	double esal;
+
+	public Employee(int eid, String ename, double esal) {
+		this.eid = eid;
+		this.ename = ename;
+		this.esal = esal;
+	}
+
+	public String toString() {
+		return "Empid = " + eid + " Empname = " + ename + " EmpSal = " + esal;
+
+	}
+	
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+
+		Employee e1 = new Employee(1, "raj", 10000);
+
+		Employee e2 = new Employee(2, "rahul", 20000);
+
+		Employee e3 = new Employee(3, "suraj", 30000);
+
+		Employee arr[] = { e1, e2, e3, new Employee(4, "juber", 40000) };
+
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.println(arr[i]);
+//		}
+
+//		for (Employee s : arr) {
+//			System.out.println(s);
+//		}
+
+		System.out.println(Arrays.toString(arr));
+	}
+}
+-------------------------------------
+
+Example 2 : [Using new keyword]
+--------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Employee {
+
+	int eid;
+	String ename;
+	double esal;
+
+	public Employee(int eid, String ename, double esal) {
+		this.eid = eid;
+		this.ename = ename;
+		this.esal = esal;
+	}
+
+	public String toString() {
+		return "Empid = " + eid + " Empname = " + ename + " EmpSal = " + esal;
+
+	}
+}
+
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter size of array");
+		int size = sc.nextInt();
+		Employee arr[] = new Employee[size];
+
+//      reading elements and storing into the array 		
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("<=== Enter " + (i + 1) + " record of Employee ===>");
+			System.out.println("Enter id");
+			int id = sc.nextInt();
+			System.out.println("Enter name");
+			String name = sc.next();
+			System.out.println("Enter salary");
+			double sal = sc.nextDouble();
+			arr[i] = new Employee(id, name, sal);
+		}
+
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.println(arr[i]);
+//		}
+
+//		for (Employee s : arr) {
+//			System.out.println(s);
+//		}
+
+		System.out.println(Arrays.toString(arr));
+	}
+}
+
+
+###########################################################
+
+3) Working with Abstract class type :    
+=======================================
+
+Example 1 : 
+-----------
+
+package com.arrayday1;
+
+import java.util.Arrays;
+
+abstract class Shape { }
+
+class Square extends Shape { }
+
+class Circle extends Shape { }
+
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+
+		Shape arr[] = new Shape[2];
+		arr[0] = new Square();
+		arr[1] = new Circle();
+		System.out.println(Arrays.toString(arr));
+	}
+}
+
+NOTE :
+-> if array is homogeneous array then we can store values dynamically into array.  
+-> if array is heterogeneous then we can not store value dynamically into the array. 
+-> and Using new keyword we can just create object type array/heterogeneous array but we can not store values dynamically.
+-> using braces is best choice to create and store values into heterogeneous array.      
+
+
+###########################################################
+
+4) Working with Interface type :   
+=================================
+
+Example 1 :
+-----------
+
+package com.arrayday1;
+
+import java.util.Arrays;
+
+interface Shape { }
+
+class Square implements Shape { }
+
+class Circle implements Shape { }
+
+public class ArrayDemo {
+
+	public static void main(String[] args) {
+
+		Shape arr[] = new Shape[2];
+		arr[0] = new Square();
+		arr[1] = new Circle();
+		System.out.println(Arrays.toString(arr));
+	}
+}
+
+NOTE :
+-> if array is homogeneous array then we can store values dynamically into array.  
+-> if array is heterogeneous then we can not store value dynamically into the array. 
+-> and Using new keyword we can just create object type array/heterogeneous array but we can not store values dynamically.
+-> using braces is best choice to create and store values into heterogeneous array.      
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Types Of Array :
+================ 
+   
+-> In java mainly array is divided into three types. 
+
+1) One Dimensional (1D) Array
+2) Two Dimension (2D) Array 
+3) Multidimensional Array / Jagged Array
+
+
+1) One Dimensional Array : 
+-------------------------
+
+-> It is a list of the variable of similar/diffrent data types.
+
+-> It allows random access and all the elements can be accessed with the help of their index.
+          
+-> The size of the array is fixed.
+
+-> Example : int arr[]={1,2,3,4,5,...} ;
+
+
+2) Two Dimensional Array / Multidimensional Array / Jagged Array :
+--------------------------------------------------------------
+
+-> It is a list of lists of the variable of the same/diffrent data type.
+
+-> It also allows random access and all the elements can be accessed with the help of their index.
+
+-> It can also be seen as a collection of 1D arrays. It is also known as the Matrix.
+
+-> Its dimension can be increased from 2 to 3 and 4 so on.
+
+-> They all are referred to as a multi-dimension array.
+
+-> The most common multidimensional array is a 2D array.
+
+-> Example 1 :  int arr[][] = {{1,2},{3,4}}; // example of 2D array OR Multidimensional Array. (2*2 matrix OR 2*3)  
+        
+-> Example 2 :  int a[][] = {{1,2,3},{2},{3},{5,67,3,8}}; // example Multidimensional array / jagged array. (4*?)
+
+NOTE :
+-> 1D array having only 1 diamentional i.e arr[N]
+-> 2D array having 2 diamentional i.e arr[N][M]
+-> multidiamentional array having multiple diamentional i.e arr[N][M][O][Nth]...
+
+
+
+Example 1 : [two diamentional/multidiamentional/jagged array]
+-------------------------------------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class JaggedArrayDemo{
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int arr[][] = { { 1, 2, 3 }, { 1, 2, 3, 4 }, { 1 } };
+
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = 0; j < arr[i].length; j++) {
+//				System.out.print(arr[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+
+//		for (int a[] : arr) {
+//			for (int x : a) {
+//				System.out.print(x + " ");
+//			}
+//			System.out.println();
+//		}
+
+		System.out.println(Arrays.deepToString(arr));
+	}
+}
+
+
+-------------------------------------------------
+
+Example 2 : [multidiamentional/jagged array]
+-------------------------------------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TwoDiamentionalArray {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int arr[][][] = { { { 1, 2, 3 }, { 4, 5 }, { 7 } } };
+
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = 0; j < arr[i].length; j++) {
+//				for (int k = 0; k < arr[i][j].length; k++) {
+//					System.out.print(arr[i][j][k] + " ");
+//				}
+//				System.out.println();
+//			}
+//		}
+
+		
+//		for (int a[][] : arr) {
+//			for (int b[] : a) {
+//				for (int c : b) {
+//					System.out.print(c + " ");
+//				}
+//				System.out.println();
+//			}
+//		}
+
+		System.out.println(Arrays.deepToString(arr));
+	}
+}

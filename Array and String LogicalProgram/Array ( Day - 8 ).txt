@@ -1,0 +1,157 @@
+Que 1 : [ Print Duplicate ]
+----------------------------
+Write a java program to print duplicate elements of array.
+Input  : {1, 2, 2, 3, 4, 4, 5 , 2}
+Output : 2 4
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 2, 3, 4, 4, 5, 2, 4, 4, 5, 4 };
+
+		for (int i = 0; i < arr.length; i++) {
+			int c = 0;
+			for (int j = 0; j < arr.length; j++) {
+				if (arr[i] == arr[j] && j > i) {
+					c++;
+				}
+			}
+			if (c == 1)
+				System.out.println(arr[i]);
+		}
+
+	}
+}
+===================================================
+
+Que 2 : [ Delete Element ]
+---------------------------
+
+Write a java program to delete given element from array.
+
+Input   : {1,2,3,4,5,6,5}
+element : 5
+Output  : [1,2,3,4] 
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static int[] delete(int arr[], int ele) {
+		int l = arr.length;
+		for (int i = 0; i < l; i++) {
+			if (arr[i] == ele) {
+				for (int j = i; j < l - 1; j++) {
+					arr[j] = arr[j + 1];
+				}
+				l--;
+				i--;
+			}
+		}
+
+		return Arrays.copyOf(arr, l);
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 5, 6, 5 };
+		System.out.println("Before : " + Arrays.toString(arr));
+		arr = Test1.delete(arr, 5);
+		System.out.println("After : " + Arrays.toString(arr));
+
+	}
+}
+
+===================================================
+
+Que 3 : [ Delete Duplicate]
+----------------------------
+Write a java program to delete all duplicate elements from array.
+
+Input   : {1,2,3,4,5,6,5,6,7,2,1,1}
+Output  : 1,2,3,4,5,6,7
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static int[] deleteDuplicate(int arr[]) {
+
+		int l = arr.length;
+		for (int i = 0; i < l; i++) {
+			for (int j = i + 1; j < l; j++) { 
+				if (arr[i] == arr[j]) {
+					for (int k = j; k < l - 1; k++) {
+						arr[k] = arr[k + 1];
+					}
+					l--;
+					i--;
+				}
+			}
+		}
+		return Arrays.copyOf(arr, l);
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5, 6, 5, 6, 7, 2, 1, 1 };
+		System.out.println("Before : " + Arrays.toString(arr));
+		arr = Test1.deleteDuplicate(arr);
+		System.out.println("After : " + Arrays.toString(arr));
+
+	}
+}
+
+===================================================
+
+Que 4 : [ Insert Element]
+---------------------------
+
+Write a java program to insert given element at given index in array.
+
+Input   : {1,2,3,4,5,6,5}
+element : 100
+index   : 3
+Output  : 1,2,3,100,4,5,6,5 
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static int[] insert(int arr[], int ele, int index) {
+
+		int brr[] = Arrays.copyOf(arr, arr.length + 1);
+
+		for (int i = brr.length - 1; i >= index; i--) {
+			brr[i] = brr[i - 1];
+		}
+		brr[index] = ele;
+
+		return brr;
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5, 6, 5 };
+		int ele = 100;
+		int index = 3;
+		System.out.println("Before : " + Arrays.toString(arr));
+		arr = Test1.insert(arr, ele, index);
+		System.out.println("After : " + Arrays.toString(arr));
+
+	}
+}
+
+===================================================
+

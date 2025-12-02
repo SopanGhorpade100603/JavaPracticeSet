@@ -1,0 +1,174 @@
+Arrays :
+========
+
+-> generally in 'C' programming language we learned that array is collection of homogeneous/same type of elements which is holding contiguous memory location.
+
+-> but in java array is collection of homogeneous/hetrogeneouse type of elements which is holding contiguous memory location.
+
+-> The main advantage of the array is random access 
+
+-> the drawback of array is, the array is fixed in size, if once we create array then we can not modified array size.(Solved in java Collection Framwork)
+
+-> in java we can create primitive type array as well as Reference type of array.
+
+   For Example :
+   ------------             
+
+A) Primitive Type Array :
+----------------------
+
+1) int a[];      // used to store integer type values
+
+2) float f[];    // used to store floating type vlaues
+
+3) double d[];   // used to store double type values
+
+4) char c[];     // used to store character type values 
+
+5) boolean b[];  // used to store double values(TRUE/FALSE)
+
+6) byte b[];     // used to store byte values
+
+7) short b[];    // used to store short values
+
+8) long l[];     // used to store long values
+
+
+               
+B) Refrence Type / Object Type / Class Type :
+------------------------------------------------
+
+1) Object type array :-> Object obj[]; // Object type array is used to store all types of values...[HETROGENEOUS ARRAY]
+
+2) Class Type array :-> Student s[]; OR Employee e[]; OR NareshIt n[]; .... so on. // used to store perticular class type object only.[HOMOGENEOUS ARRAY]
+
+3) Abstract Class Type of array : -> // used to store child-class objects [loosed coupled + HETROGENEOUS ARRAY for child classes + HOMOGENEOUS ARRAY for non child classes]
+
+4) Interface Type Array :-> // used to store implementation class objects [loosed coupled + HETROGENEOUS ARRAY for implementation classes + HOMOGENEOUS ARRAY for non implementation classes]
+
+
+NOTE : USING OBJECT TYPE ARRAY WE CAN STORE HOMOGENEOUS / HETROGENEOUS TYPES OF ELEMENTS INTO THE ARRAY.
+       AND THATS WHY WE CAN SAY OBJECT ARRAY IS HETROGENEOUS ARRAY IN JAVA.
+
+Example : Object obj[] = {123,"java",10.0,'A',true};
+
+
+
+What are the step do we need to follow during array creation ?
+---------------------------------------------------------------
+
+Syntax :
+-------
+
+STEP 1 : declaration of array  ----> data_type var_name[];
+
+STEP 2 : creation of array  -------> var_name = new data_type[size];
+
+STEP 3 : initialization of array --> 
+         var_name[INDEX NUMBER] = value1;
+         var_name[INDEX NUMBER] = value2;
+         var_name[INDEX NUMBER] = value3;
+
+
+Example :
+---------
+         
+STEP 1 : int arr[];            <----- declaration of array
+
+STEP 2 : arr = new int[5];     <----- creation of array
+
+STEP 3 :  
+          arr[0] = 10;         <----- initializing value 10 at index 0
+          arr[1] = 20;         <----- initializing value 20 at index 1
+          arr[2] = 30;         <----- initializing value 30 at index 2
+          arr[3] = 40;         <----- initializing value 40 at index 3
+          arr[4] = 50;         <----- initializing value 50 at index 0
+
+
+NOTE : THIS ABOVE 3 STEPS ARE LENGTHY PROCESS TO CREATE AN ARRAY. SO INSTEAD OF THIS WE CAN FOLLOW BELOW 5 WAYS OF ARRAY CREATION.          
+
+1) Using new keyword
+
+2) Using {} braces
+
+3) Using literal
+
+4) Using Anonymous array
+
+5) Using Array.newInstance() method
+
+
+
+1) Using new keyword : 
+----------------------
+
+Example :
+
+int arr[] = new int[5]; 
+arr[0] = 10;
+arr[1] = 20; 
+arr[2] = 30;
+arr[3] = 40; 
+arr[4] = 50;   
+                       
+
+2) Using {} braces :
+--------------------
+
+Example :
+
+int arr[] = {10,20,30,40,50}; 
+
+
+3) Using literal :
+------------------
+
+Example : 
+
+int arr[] = new int[]{10,20,30,40,50}; (NOTE : literal array is not much useful)
+
+
+4) Using Anonymous array :
+--------------------------
+
+Example :
+                  
+public class AnonymouseArrayDemo{
+                   
+   public void m1(int arr[]){
+   ------
+   ------ // some business logic
+   ------
+   }
+    
+   public static void main(String args[]){
+                  
+   AnonymouseArrayDemo a = new AnonymouseArrayDemo();
+
+   a.m1(new int[]{10,20,30,40,50}); // <----- Anonymouse Array
+ 
+    }
+}
+    
+
+ -> A array which doesn't have any name is know as Anonymous array .
+ 
+
+5) Using Array.newInstance() method:
+-------------------------------------
+
+   a) 1D array :
+                Example :  Integer arr[] = (Integer[]) Array.newInstance(Integer.class, 5);
+  
+
+   b) 2D array :
+              Example :  Integer arr[][] = (Integer[][]) Array.newInstance(Integer.class, 5,5);
+
+
+   c) multi diamentional array : 
+              Example :  Float arr[][][][] = (Float[][][][]) Array.newInstance(Float.class, 2, 2, 3, 5);
+
+
+
+
+

@@ -1,0 +1,302 @@
+Que 1 :
+=======
+
+Write a java program to check given matrix is Magic matrix or not.
+-> if sum of principal diagonal, sum of horizontal diagonal , each row sum & each columns sum is equal then the matrix is magic matrix.
+
+Magic Matrix.
+
+2  7  6
+
+9  5  1
+
+4  3  8
+
+
+package com.nit.day1;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 2, 7, 6 }, { 9, 5, 1 }, { 4, 3, 8 } };
+
+		int pd = 0;
+		int hd = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			pd = pd + arr[i][i];
+			hd = hd + arr[i][arr.length - 1 - i];
+		}
+
+		if (pd == hd) {
+			for (int i = 0; i < arr.length; i++) {
+				int rsum = 0, csum = 0;
+				for (int j = 0; j < arr.length; j++) {
+					rsum = rsum + arr[i][j]; // 2+7+6
+					csum = csum + arr[j][i];
+				}
+				if (pd != rsum || csum != hd) {
+					System.out.println("Not Magic Matrix");
+					return;
+				}
+			}
+			System.out.println("Magic Matrix");
+		} else {
+			System.out.println("Not Magic Matrix");
+		}
+
+	}
+}
+
+============================================
+
+Que 2 :
+=======
+
+Count all sorted rows in a matrix
+
+Given a matrix of m*n size, the task is to count all the rows 
+in a matrix that are sorted either in strictly increasing order 
+or in strictly decreasing order?
+
+Examples :
+
+Input : m = 4,  n = 5
+        mat[m][n] = 
+                    1 2 3 4 5
+                    4 3 2 1 0
+                    8 10 6 5 4
+                    5 7 8 9 10
+Output: 3 
+
+package com.nit.day1;
+
+public class Test {
+
+	public static boolean isAscending(int brr[]) {
+		for (int i = 0; i < brr.length - 1; i++) {
+			if (brr[i] > brr[i + 1])
+				return false;
+		}
+		return true;
+	}
+
+	public static boolean isDescending(int brr[]) {
+		for (int i = 0; i < brr.length - 1; i++) {
+			if (brr[i] < brr[i + 1])
+				return false;
+		}
+		return true;
+	}
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 1, 1, 1, 4, 5 }, { 9, 8, 5, 4, 3 }, { 2, 3, 4, 0, 1 }, { 2, 4, 5, 6, 8 } };
+
+		int c = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			if (Test.isAscending(arr[i]) || Test.isDescending(arr[i]))
+				c++; // 2
+		}
+
+		System.out.println(c);
+
+	}
+}
+
+
+
+============================================
+
+
+Que 3 :
+=======
+
+Printing Boundary Elements of a Matrix.
+Given a matrix of size n x m. Print the boundary elements of the matrix. Boundary elements are those elements that are not surrounded by elements in all four directions, i.e. elements in the first row, first column, last row, and last column
+
+Examples: 
+
+Input:      
+            1 2 3 4  
+            5 6 7 8
+            1 2 3 4
+            5 6 7 8
+
+Output :
+
+
+         1 2 3 4 
+         5     8 
+         1     4 
+         5 6 7 8
+
+Input:
+             1 2 3   
+             5 6 7 
+             1 2 3 
+
+
+
+
+Output: 
+
+        1 2 3
+        5   7
+        1 2 3
+
+
+package com.nit.day1;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 1, 1, 1, 1, 1 }, { 2, 2, 2, 2, 2 }, { 3, 3, 3, 3, 3 }, { 4, 4, 4, 4, 4 }, { 5, 5, 5, 5, 5 } };
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				if (i == 0 || j == 0 || i == arr.length - 1 || j == arr.length - 1)
+					System.out.printf("%4d", arr[i][j]);
+				else
+					System.out.printf("%4c", ' ');
+			}
+			System.out.println();
+		}
+
+	}
+}
+
+
+============================================
+
+Que 4 :
+=======
+
+Java Program to print lower diagonal of a matrix.
+Input :
+1 2 3
+4 5 6
+7 8 9
+
+Output :
+1 0 0
+4 5 0
+7 8 9
+
+package com.nit.day1;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				if (j > i)
+					System.out.printf("%4d", 0);
+				else
+					System.out.printf("%4d", arr[i][j]);
+			}
+			System.out.println();
+		}
+
+	}
+}
+
+
+
+============================================
+
+Que 5 :
+=======
+
+Efficiently compute sums of diagonals of a matrix
+Given a 2D square matrix, find the sum of elements in Principal and horizontal diagonals. For example, consider the following 4 X 4 input matrix.
+
+
+Input :
+4
+
+1     2     3     4
+
+4     3     2     1
+
+7     8     9     6
+
+6     5     4     3
+
+
+Output :
+Principal Diagonal: 16
+horizontal Diagonal: 20
+
+Input :
+3
+1 1 1
+1 1 1
+1 1 1
+Output :
+Principal Diagonal: 3
+horizontal Diagonal: 3
+
+
+ANS : REFER QUE 1
+
+============================================
+
+
+Que 6 :
+=======
+
+Java Program to find Sum of all elements of each row of a matrix.
+Input :
+1 2 3
+4 5 6
+7 8 9
+
+Output :
+1 2 3  6
+4 5 6  15
+7 8 9  24
+
+ANS : REFER QUE 1
+
+============================================ [ HOMEWORK ] ============================================
+
+Que 7 :
+=======
+
+Java program to check a given matrix is a sparse matrix or not.
+RUN 1:
+Enter the elements of the matrix:
+4 5 6
+7 0 0
+0 0 0
+Matrix is a Sparse Matrix
+
+RUN 2:
+Enter the elements of the matrix:
+1 2 3
+4 5 0
+7 8 9
+Matrix is not a Sparse Matrix
+
+============================================
+
+Que 8 :
+=======
+
+Java program to print the upper triangular matrix.
+Matrix:
+9 8 7 
+5 4 6 
+1 2 3 
+
+Upper triangular matrix is: 
+9 8 7 
+  4 6 
+    3 

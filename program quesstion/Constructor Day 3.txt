@@ -1,0 +1,103 @@
+ShoppingCartTester
+Create a class called ShoppingCart.
+
+The class should have the following instance variables:
+
+String item – the name of the item.
+
+double price – the price of a single item.
+
+int quantity – the number of items purchased.
+
+Implement a constructor to initialize these variables.
+
+Create a method called calculateBill() that:
+
+Calculates the total bill as price * quantity.
+
+Prints the item name and total amount to be paid.
+create class name ShoppingCartTester which contain main method
+In the main() method:
+
+Create an object of ShoppingCart with sample data (e.g., "Laptop", 50000, 2).
+
+Call the calculateBill() method.
+
+Sample Input
+Laptop
+45000
+2
+Sample Output
+Item:Laptop, Total Bill:90000.0
+
+=========================================================
+
+LibraryBookTester
+Create a class named LibraryBook.
+
+The class should have two instance variables:
+
+String bookName – the name of the book.
+
+int daysLate – number of days the book is returned late.
+
+Define a constructor to initialize the values.
+
+Write a method called calculateFine() that:
+
+Calculates fine as: daysLate * 5 (₹5 per day).
+
+Prints the book name and total fine amount.
+
+create class name as LibraryBookTester which contain main method 
+In the main() method:
+
+Use Scanner to take input from the user.
+
+Create an object using the entered data.
+
+Call calculateFine().
+Sample Input
+Java
+5
+Sample Output
+Book: Java, Fine: 25
+============================================================
+EmployeeTester
+Create a class called Employee.
+
+Define the following instance variables:
+
+String name – the name of the employee
+
+double basicSalary – the employee's basic salary
+
+Create a constructor to initialize the above values.
+
+Write a method calculateNetSalary() that:
+
+Calculates:
+
+HRA = 20% of basic salary
+
+DA = 10% of basic salary
+
+PF = 8% of basic salary
+
+Computes net salary = basic + HRA + DA - PF
+
+Displays the employee name and their net salary
+
+create class name as EmployeeTester which contain method 
+In the main() method:
+
+Use Scanner to input employee name and basic salary from the user
+
+Create an object using the input
+
+Call the method to display the net salary
+Sample Input
+Alice
+40000
+Sample Output
+Net Salary of Alice: 48800.0

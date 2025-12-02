@@ -1,0 +1,162 @@
+Assignment 01 :
+---------------
+Create an application to compare two objects based on the content by overriding the equals(Object obj) method of Object class.
+
+Create a BLC class called Product
+
+Instance variables :
+private int productId
+private String productName
+
+Create a parameterized constructor to initialize all properties.
+
+Override equals(Object obj) method from Object class to compare the content of Product object, Make sure that if end user try to compare the content of two different objects (Product and Employee) then program should provide proper message.
+
+Create an ELC class ProductEquality to test your application by creating two objects of Product class to compare the content by calling Product class overridden equals(Object obj) method.
+
+Follow the equals() and hashCode() contract.
+
+ANS
+====
+
+package com.java_method_of_Object_class;
+
+class Product {
+	private int productId;
+	private String name;
+
+	public Product(int productId, String name) {
+		this.productId = productId;
+		this.name = name;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Product) { 
+			Product p = (Product) obj;
+			if (this.productId == p.productId && this.name == p.name) {
+				return true;
+			} else {
+				return false;
+			}
+		} else
+			return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return this.productId;
+	}
+
+}
+
+public class ProductEquality {
+	public static void main(String[] args) 
+	{
+		Product p1=new Product(121,"CAMERA");
+		Product p2=new Product(121,"CAMERA");
+		System.out.println(p1.equals(p2));
+		System.out.println(p1.hashCode() +" : "+p2.hashCode());
+
+	}
+}
+--------------------------------------------------------------------------
+MCQ on LAMBDA :
+---------------
+1) Which of the following is the correct syntax for a lambda expression in Java?
+A. (int a, int b) => a + b
+B. (int a, int b) -> { return a + b; }     //ANS
+C. a, b -> a + b
+D. (a, b) => return a + b;
+
+
+2) What is the return type of the following lambda expression?
+(String s) -> s.length()
+A. void
+B. int              //ANS
+C. String
+D. boolean
+
+
+3) Lambda expressions can be used only with:
+A. Abstract classes
+B. Interfaces with any number of abstract methods
+C. Functional interfaces               //ANS
+D. Interfaces with default methods
+
+
+
+4) What is the output?
+Function<String, Integer> f = s -> s.length();
+System.out.println(f.apply("hello"));
+A. hello
+B. 5         //ANS
+C. true
+D. Compilation error
+
+
+
+5) Which of the following lambdas match Predicate<String>?
+A. s -> s.length()
+B. s -> s.isEmpty()        //ANS
+C. () -> true
+D. s -> System.out.println(s)
+
+
+6) Which interface has accept() method?
+A. Predicate
+B. Consumer           //ANS
+C. Function
+D. Supplier
+
+7) Which of these is NOT a valid functional interface?
+
+A)
+@FunctionalInterface  
+interface Test 
+{  
+   void show();  
+}
+
+B)
+@FunctionalInterface  
+interface Test                        //ANS
+{  
+    void show();  
+    void display();  
+}
+
+C) 
+interface Test 
+{  
+    int add(int a, int b);  
+}
+
+D)
+@FunctionalInterface  
+interface Test 
+{  
+    void show();  
+    default void display() {}  
+}
+
+
+8) Which of the following is a correct lambda expression that adds two integers?
+A. (a, b) => a + b
+B. (int a, int b) -> { a + b }
+C. (int a, int b) -> return a + b;
+D. (int a, int b) -> a + b             //ANS
+
+
+9) Which of these is a valid zero-argument lambda?
+A. -> System.out.println("Hello")
+B. () -> System.out.println("Hello")      //ANS
+C. ( ) => System.out.println("Hello")
+D. System.out.println("Hello") -> ()
+
+
+10) What is the advantage of using lambdas in Java?
+A. Makes code longer
+B. Improves performance always
+C. Provides a concise way to represent behavior          //ANS
+D. Only works with interfaces having default methods

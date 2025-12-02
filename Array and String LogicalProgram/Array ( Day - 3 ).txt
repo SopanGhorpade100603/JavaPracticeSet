@@ -1,0 +1,258 @@
+Example 1 : [Working with 2D array dynamically (using new keyword technique)]
+------------------------------------------------------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TwoDiamentionalArray {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entre size of array");
+		int size = sc.nextInt();
+		int arr[][] = new int[size][size];
+
+		System.out.println("Enter " + (size * size) + " elements into array");
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				arr[i][j] = sc.nextInt();
+			}
+		}
+
+//		   printing array using for loop
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				System.out.print(arr[i] + " ");
+			}
+			System.out.println();
+		}
+
+//		printing array using for-each loop
+		for (int i[] : arr) {
+			for (int j : i) {
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+
+//		printing array using Arrays.deepToString() method
+		System.out.println(Arrays.deepToString(arr));
+
+	}
+}
+
+
+
+
+Example 2 : [Working with 2D jagged array dynamically (using new keyword technique)]
+------------------------------------------------------------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TwoDiamentionalArray {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+//---> NOTE :
+//---> for jagged array first diamention value is must but second diamentional value is not required.
+//---> if we pass second diamentional value to the array manually then it is known as 2D array but not multidiamentional array.
+
+		int arr[][] = new int[3][]; // <--- 2D jagged array
+
+		arr[0] = new int[3]; // <--- creating new array on 0 index of size 3
+		arr[1] = new int[4]; // <--- creating new array on 1 index of size 4
+		arr[2] = new int[1]; // <--- creating new array on 2 index of size 1
+
+		int l = arr[0].length + arr[1].length + arr[2].length; // <--- calculating length of jagged array
+
+		System.out.println("Enter " + l + " Elements into array");
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = sc.nextInt();
+			}
+		}
+
+//		   printing array using for loop
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				System.out.print(arr[i] + " ");
+			}
+			System.out.println();
+		}
+
+//		printing array using for-each loop
+		for (int i[] : arr) {
+			for (int j : i) {
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+
+//		printing array using Arrays.deepToString() method
+		System.out.println(Arrays.deepToString(arr));
+
+	}
+}
+
+
+
+
+Example 3 : [Working with 3D jagged array dynamically (using new keyword technique)]
+------------------------------------------------------------------------------------
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TwoDiamentionalArray {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int arr[][][] = new int[3][][]; // <--- 3D jagged array
+
+		arr[0] = new int[2][]; // <--- creating new 2D jagged array on [0] index of size 2
+		arr[1] = new int[1][]; // <--- creating new 2D jagged array on [1] index of size 1
+		arr[2] = new int[1][]; // <--- creating new 2D jagged array on [2] index of size 1
+
+		arr[0][0] = new int[5]; // <--- creating new 1D array on [0][0] index of array with size 5
+		arr[0][1] = new int[2]; // <--- creating new 1D array on [0][0] index of array with size 2
+
+		arr[1][0] = new int[3]; // <--- creating new 1D array on [1][0] index of array with size 3
+
+		arr[2][0] = new int[1]; // <--- creating new 1D array on [2][0] index of array with size 1
+
+		int l = arr[0][0].length + arr[0][1].length + arr[1][0].length + arr[2][0].length; // <--- calculating length of
+																							// jagged array
+
+		System.out.println("Enter " + l + " Elements into array");
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				for (int k = 0; k < arr[i][j].length; k++) {
+					arr[i][j][k] = sc.nextInt();
+				}
+			}
+		}
+
+//		   printing array using for loop
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				for (int k = 0; k < arr[i][j].length; k++) {
+					System.out.print(arr[i][j][k] + " ");
+				}
+				System.out.println();
+			}
+		}
+
+//		printing array using for-each loop
+		for (int a[][] : arr) {
+			for (int b[] : a) {
+				for (int c : b) {
+					System.out.print(c + " ");
+				}
+				System.out.println();
+			}
+		}
+
+//		printing array using Arrays.deepToString() method
+		System.out.println(Arrays.deepToString(arr));
+
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Array class 
+============
+
+-> Array class present in (java.lang.reflect.Array) package. if we wants to use Array class method then must and should we have to import this package.
+
+-> Array is final class in java (immutable class)
+
+-> We can not create Array class object directly beacause constructor is declared as private. 
+ 
+-> Array class providing following static methos to perform operation with array object.
+
+
+
+static Object	get(Object array, int index)         --> Returns the value of the indexed component in the specified array object.
+
+static boolean	getBoolean(Object array, int index) ---> Returns the value of the indexed component in the specified array object, as a boolean.
+
+static byte	getByte(Object array, int index)    ---> Returns the value of the indexed component in the specified array object, as a byte.
+
+static char	getChar(Object array, int index)   ----> Returns the value of the indexed component in the specified array object, as a char.
+
+static double	getDouble(Object array, int index) ----> Returns the value of the indexed component in the specified array object, as a double.
+
+static float	getFloat(Object array, int index) -----> Returns the value of the indexed component in the specified array object, as a float.
+
+static int	getInt(Object array, int index)    ----> Returns the value of the indexed component in the specified array object, as an int.
+
+static int	getLength(Object array)            ----> Returns the length of the specified array object, as an int.
+
+static long	getLong(Object array, int index) ------> Returns the value of the indexed component in the specified array object, as a long.
+
+static short	getShort(Object array, int index) ----> Returns the value of the indexed component in the specified array object, as a short.
+
+static Object	newInstance(Class<?> componentType, int... dimensions) ---> Creates a new array with the specified component type and dimensions.
+
+static Object	newInstance(Class<?> componentType, int length) --> Creates a new array with the specified component type and length.
+
+static void	set(Object array, int index, Object value) ---> Sets the value of the indexed component of the specified array object to the specified new value.
+
+static void	setBoolean(Object array, int index, boolean z) ---> Sets the value of the indexed component of the specified array object to the specified boolean value.
+
+static void	setByte(Object array, int index, byte b) ---> Sets the value of the indexed component of the specified array object to the specified byte value.
+
+static void	setChar(Object array, int index, char c) ---> Sets the value of the indexed component of the specified array object to the specified char value.
+
+static void	setDouble(Object array, int index, double d) --> Sets the value of the indexed component of the specified array object to the specified double value.
+
+static void	setFloat(Object array, int index, float f) ---> Sets the value of the indexed component of the specified array object to the specified float value.
+
+static void	setInt(Object array, int index, int i) ---> Sets the value of the indexed component of the specified array object to the specified int value.
+
+static void	setLong(Object array, int index, long l) ---> Sets the value of the indexed component of the specified array object to the specified long value.
+
+static void	setShort(Object array, int index, short s) ---> Sets the value of the indexed component of the specified array object to the specified short value.
+
+
+
+NOTE : 
+
+-> above all methods are static method which is just used to Set and Get the values of different types of array.
+
+-> But apart from Set & Get methods , Array class having 2 important methods .
+   a) newInstance(Class<?> componentType, int... dimensions)
+   b) newInstance(Class<?> componentType, int length)
+              
+-> using these above 2 methods we can create 1D,2D or multidiamentional array.
+
+Example :
+
+a) 1D array :
+                Example :  Integer arr[] = (Integer[]) Array.newInstance(Integer.class, 5);
+  
+
+b) 2D array :
+              Example :  Integer arr[][] = (Integer[][]) Array.newInstance(Integer.class, 5,5);
+
+
+c) multi diamentional array : 
+              Example :  Float arr[][][][] = (Float[][][][]) Array.newInstance(Float.class, 2, 2, 3, 5);

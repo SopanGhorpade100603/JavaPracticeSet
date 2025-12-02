@@ -1,0 +1,105 @@
+Assignment 01 :
+-------------
+Create a BLC class Employee :
+
+Fields/Attributes/Properties :
+------------------------------
+employeeNumber : int
+  employeeName : String
+employeeSalary : double
+
+Methods :
+---------
+1)
+
+Method Name		: setEmployeeDetails()
+Argument		: 3 arguments of type int , String and double
+Return Type		: void
+Access modifier		: public
+
+In this method with the help of parameters variables, initialize the instance variable
+
+2) 
+
+Method Name		: calculateSalaryIncrement()
+Argument		: No arguments
+Return Type		: void
+Access modifier		: public
+
+In this method we need to calculate salary increment based on employee salary on the following criteria :
+
+Salary		-      Increment
+<50000		-      10 % increment on Salary
+50000 to 80000	-	7 % increment on Salary
+>80000		-	5 % increment on Salary
+
+Now print two details inside the method
+ a) Salary increment amount
+ b) After increment, Updated salary
+
+3)
+
+Method Name		: getEmployeeDetails()
+Argument		: No arguments
+Return Type		: void
+Access modifier		: public
+
+In this method we should print all employee details 
+
+Create another ELC class called EmployeeDemo which contains main method.
+Create three Employee Object and call the methdos to get desired output.
+
+Assignment 02 :
+---------------
+A BLC class named as Bank is given in which you need to write the code for performing the withdrawal and deposit process and also Checking current balance and displayDetail of the Customer (BlC class)
+
+Non static Fields [private access modifier]
+----------------------------------------------------------------
+customerName:String
+accountNumber:int
+currentBalance:double
+
+static Field(public access modifier)
+------------------------------------
+bankName:String static
+bankAddress:String static
+bankIFSCCode:Stirng static
+---------------------------------------------------
+This BLC class will contain 6 methods with the following specifications :
+---------------------------------------------------
+1. Name of method : setCustomerDeatils
+parameters : 3 parameters (name, accNumber, balance)
+Access modifier : public
+return type : void 
+---------------------------------------------------
+2. Name of method : withdraw
+Arguments : double amount
+Return Type : void
+Access Modifiers: public
+Rules on this Withdraw method:-
+If withdraw amount is greater than available balance than it should print
+error message "You have insufficient balance"
+--------------------------------------------------
+3. Name of method : deposit
+Arguments : double amount
+Return Type : void
+Access Modifiers: public 
+If a cutsomer wants to deposit zero or -ve amount than it should provide error message.
+--------------------------------------------------
+4. Name of method : currentBalance
+Arguments : No Argument
+Return Type : void
+Access Modifiers: public
+This Method print the Current balance
+-------------------------------------------------
+5. Name of method : displayDetails
+Arguments : No Argument
+Return Type : String
+Access Modifiers: public
+
+Here We need to to return all the properties in String format through this displayDetails() method.
+------------------------------------------------
+ELC Class
+-------------------------------------------------
+An ELC class BankCustomer is given to you, call the method and perform the Operation
+[Input you have to take from the Scanner class

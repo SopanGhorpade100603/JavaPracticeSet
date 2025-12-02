@@ -1,0 +1,378 @@
+
+Que : 1
+========
+Write a java program to check equality of two given array.
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static boolean checkEquality(int arr[], int brr[]) {
+		if (arr == null || brr == null)
+			return false;
+
+		if (arr.length != brr.length)
+			return false;
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] != brr[i])
+				return false;
+		}
+		return true;
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5 };
+		int brr[] = { 1, 2, 3, 4, 5 };
+
+		System.out.println(Test1.checkEquality(arr, brr));
+
+	}
+}
+
+=============================================
+
+Array.equals() method :
+-----------------------
+
+-> Array.equals() method is used to containt of array. if containt are equal then it will return true otherwise return false.
+
+-> if array is Object type or Multidiamentional array then Array.deepEquals() is recommended.
+
+Example 1 : [working with Arrays.equals(arr, brr) method]
+---------------------------------------------------------
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5 };
+		int brr[] = { 1, 2, 3, 4, 5 };
+
+		System.out.println(Arrays.equals(arr, brr));
+
+	}
+}
+
+
+Example 2 : [working with Arrays.deepEquals(arr, brr) method]
+---------------------------------------------------------
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 1, 2, 3 }, { 4, 5 } };
+		int brr[][] = { { 1, 2, 3 }, { 4, 5 } };
+
+		System.out.println(Arrays.deepEquals(arr, brr));
+	}
+}
+==============================================
+
+Arrays.hashCode() method :
+--------------------------
+
+-> Arrays.hashCode() methos internally using following formula to generating the hashcode for array .
+
+
+        int result = 1;
+        for (int element : a)
+            result = 31 * result + element;
+
+        return result;
+
+-> for integer array Arrays.hashCode() method using above formula to generate hash code. like that similar formalas hashCode() method is using for another types of array.
+
+-> if multiple array object contains same elements with same size of array, then it will generate same hashcode for all array objects.(because hash code is generated based on array elements , not by address of array).
+
+-> if array is Object type or Multidiamentional array then Array.deepHashCode() method is recommended.
+
+
+
+Example 1 : [Working with Arrays.hashCode() method]
+---------------------------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5 };
+		int brr[] = { 1, 2, 3, 4, 5 };
+
+		System.out.println(Arrays.hashCode(arr));
+		System.out.println(Arrays.hashCode(brr));
+
+	}
+}
+
+Output :
+
+29615266
+29615266
+
+
+
+Example 2 : [Working with Arrays.hashCode() method]
+----------------------------------------------------
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5, 6 };
+		int brr[] = { 1, 2, 3, 4, 5, 6 };
+
+		System.out.println(Arrays.hashCode(arr));
+		System.out.println(Arrays.hashCode(brr));
+
+		if (Arrays.hashCode(arr) - Arrays.hashCode(brr) > 0) {
+			System.out.println("Arr" + Arrays.toString(arr));
+		} else if (Arrays.hashCode(arr) - Arrays.hashCode(brr) < 0) {
+			System.out.println("Brr" + Arrays.toString(brr));
+		} else {
+			System.out.println("Equal");
+		}
+
+	}
+}
+
+
+
+Example 3 : [Working with Arrays class hashCode() method and Object class hashCode() method]
+---------------------------------------------------------------------------------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1, 2, 3, 4, 5 };
+		int brr[] = { 1, 2, 3, 4, 5 };
+
+		System.out.println("Hash code by Arrays class hashCode() method");
+		System.out.println(Arrays.hashCode(arr));
+		System.out.println(Arrays.hashCode(brr));
+
+		System.out.println("Hash code by Object class hashCode() method");
+		System.out.println(arr.hashCode());
+		System.out.println(brr.hashCode());
+
+		System.out.println(arr == brr);               // FALSE <--- checking address
+		System.out.println(arr.equals(brr));          // FALSE <--- checking address
+		System.out.println(Arrays.equals(arr, brr));  // FALSE <--- checking containt
+
+	}
+}
+
+
+Example 4 : [Working with Arrays.deepHashCode() method ]
+--------------------------------------------------------
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[][] = { { 1, 2, 3 }, { 4, 5 } };
+		int brr[][] = { { 1, 2, 3 }, { 4, 5 } };
+
+		System.out.println(Arrays.deepHashCode(arr));
+		System.out.println(Arrays.deepHashCode(brr));
+
+	}
+}
+=============================================================
+
+
+Arrays.binarySearch() method :
+-------------------------------
+
+-> Arrays.binarySearch() method internally using binary search algorithm to search perticular element into array. 
+
+-> The array must be sorted as by the Arrays.sort() method prior to making this call. 
+
+-> If it is not sorted, the results are undefined. If the array contains multiple elements with the specified value, there is no guarantee which one will be found.
+
+Example 1 :
+------------
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 5, 7, 4, 2, 5, 7, 7, 7, 9 };
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.binarySearch(arr, 7));
+
+	}
+}
+
+
+
+
+Example 2 :
+-----------
+
+package com.arrayday1;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class Demo {
+
+	public static void main(String[] args) {
+
+		byte byteArr[] = { 10, 20, 15, 22, 35 };
+		char charArr[] = { 'g', 'p', 'q', 'c', 'i' };
+		int intArr[] = { 10, 20, 15, 22, 35 };
+		double doubleArr[] = { 10.2, 15.1, 2.2, 3.5 };
+		float floatArr[] = { 10.2f, 15.1f, 2.2f, 3.5f };
+		short shortArr[] = { 10, 20, 15, 22, 35 };
+
+		Arrays.sort(byteArr);
+		Arrays.sort(charArr);
+		Arrays.sort(intArr);
+		Arrays.sort(doubleArr);
+		Arrays.sort(floatArr);
+		Arrays.sort(shortArr);
+
+		byte byteKey = 35;
+		char charKey = 'g';
+		int intKey = 22;
+		double doubleKey = 1.5;
+		float floatKey = 35;
+		short shortKey = 5;
+
+		System.out.println(byteKey + " found at index = " + Arrays.binarySearch(byteArr, byteKey));
+		System.out.println(charKey + " found at index = " + Arrays.binarySearch(charArr, charKey));
+		System.out.println(intKey + " found at index = " + Arrays.binarySearch(intArr, intKey));
+		System.out.println(doubleKey + " found at index = " + Arrays.binarySearch(doubleArr, doubleKey));
+		System.out.println(floatKey + " found at index = " + Arrays.binarySearch(floatArr, floatKey));
+		System.out.println(shortKey + " found at index = " + Arrays.binarySearch(shortArr, shortKey));
+	}
+
+}
+
+
+
+Arrays.binarySearch(arr, int frontIndex, int toIndex,int key) method :
+---------------------------------------------------------------------
+
+-> Arrays.binarySearch(arr, int frontIndex, int toIndex,int key) method internally using binary search algorithm to search perticular element in given range of array. 
+
+-> The array must be sorted as by the Arrays.binarySearch(arr, int frontIndex, int toIndex,int key) method prior to making this call. 
+
+-> If it is not sorted, the results are undefined. If the array contains multiple elements with the specified value, there is no guarantee which one will be found.
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = { 1,5, 7, 4, 2, 5, 7, 7, 7, 9 };
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.binarySearch(arr, 0, arr.length, 7));
+
+	}
+}
+
+
+
+=============================================================
+
+Arrays.fill() method() :
+-------------------------
+
+-> Arrays.fill() method() used to fill the given values into the array by replacing all old array elements.
+
+
+package com.nit.day1;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		int arr[] = new int[5];
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
+		Arrays.fill(arr, 8);
+		System.out.println(Arrays.toString(arr));
+
+	}
+}
+
+=============================================================
+
+Arrays.compare() method :
+-------------------------
+-> compare arrays lexicographically (dictionary order). 
+
+-> This method is useful for ordering arrays and different overloads for different types including boolean, byte, char, double, float, int, long, short, and Object arrays.
+
+-> It returns positive value, if the first array is lexicographically greater.
+
+-> It returns negative value, if the first array is lexicographically lesser.
+
+-> It returns 0, if both arrays are equal.
+
+-> This method not support Object type array. (we have to use Comparator or Comparable concept of collection framwork).
+
+
+Test case 1 :
+-------------
+int arr[] = { 1,2,3,4,5};;
+int brr[] = { 1,2,3,4,5};
+System.out.println(Arrays.compare(arr, brr));
+
+Output : 0
+
+Test case 2 :
+-------------
+int arr[] = { 1,2,3,4,8};
+int brr[] = { 1,2,3,4,5};
+System.out.println(Arrays.compare(arr, brr));
+
+Output : 1
+
+Test case 3 :
+-------------
+int arr[] = { 1,2,3,4,5};;
+int brr[] = { 1,2,3,4,8};
+System.out.println(Arrays.compare(arr, brr));
+
+Output : -1

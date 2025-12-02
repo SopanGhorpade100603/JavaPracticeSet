@@ -1,0 +1,92 @@
+
+Question Collection Framework
+================================
+
+1. What is the default initial capacity of HashMap?
+	a) 16	
+
+2. Which of these classes allows duplicate elements?
+	a) ArrayList, LinkedList, Vector	
+
+3. Which class is synchronized in Java?
+	a) Vector,Stack,Hashtable,StringBuffer
+
+4. Stack in Java is a subclass of:
+	a) Vector
+
+5. Which of the following allows fast random access to elements?
+	a) ArrayList,Vector
+
+6. Which of the following implements the List Interface?
+	a) ArrayList, LinkedList, Vector, Stack
+
+7. Which of the following allows one null key? 
+       	a) HashMap,LinkedHashMap
+
+8. Which operation in Stack follows LIFO order? 
+	a) Insertion and Deletion
+
+9. How does HashMap handle collisions internally?
+	a) Separate Chaining (LinkedList or Tree)
+
+10. What happens when the number of entries in a HashMap exceeds load factor * capacity?
+	a) It resizes (doubles) its capacity
+
+11. If two different keys have the same hashcode, this situation is called:
+	a) Hash-Collision
+
+12. Which method is used to insert an element in Stack?
+	a) push()
+
+13. Which of the following allows null elements?
+        a) ArrayList, LinkedList, Vector, Stack, HashSet, LinkedHashSet
+	
+14. Which class maintains insertion order of entries?
+   	a) LinkedHashMap
+
+15. HashMap internally uses a: 
+	a) Array of LinkedList / Tree (since Java 8)
+
+16. What is the default load factor of HashMap?	  d) 0.75
+	
+17. Time complexity of get() and put() in HashMap is:
+	a) O(1) average, O(n) worst-case
+
+18. Which method returns the value associated with a key?
+	a) get(Object key)	
+
+19. Which order does HashMap maintain for keys and values?
+	a) Random order (no guarantee)		
+
+20. Which data structure is used internally by ArrayList?
+	a) Dynamic Array (Object[] array)		
+
+21. Which of these classes can store heterogeneous data types?	
+        a) ArrayList, Vector, LinkedList, HashMap, etc.,		
+
+22. Which is true about LinkedList?
+	a)LinkedList maintains insertion order, allows null and duplicate elements, and is implemented as a doubly linked list.		
+
+23. The default capacity of an ArrayList when created using default constructor is:
+	a) 10		
+
+24. The main advantage of LinkedList over ArrayList is:
+	a) Efficient insertions and deletions		
+
+25. Which of the following is not synchronized?
+	a) HashMap, LinkedHashMap, Hashtable, and TreeMap		
+
+26. From Java 8, when the number of items in a HashMap bucket exceeds 8, the bucket is converted into a:
+	a) Tree (Red-Black Tree)		
+
+27. Which of the following implements the Map interface?
+	a) HashMap		
+
+28. What happens when ArrayList exceeds its capacity?
+	a) new, larger internal array is created, and all elements are copied into it.		
+
+29. Which of the following is the root interface of the Java Collections Framework?
+	a) Iterable		
+
+30. Which method inserts a key-value pair in HashMap?
+	a) put()		

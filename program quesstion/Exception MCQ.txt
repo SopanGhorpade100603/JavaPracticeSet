@@ -1,0 +1,427 @@
+
+1  Find the output of the Program 
+     import java.io.*;
+     class Test45 {
+     public static void main(String[] args) throws Exception
+     { 
+ 	methodA(); 
+     }
+    public static void methodA() throws IOException
+    {
+     System.out.println("Completed.."); 
+   }
+ }	                                                                   // Completed..
+----------------------------------------------------
+
+2  import java.io.FileNotFoundException;
+   public class a60 {
+   public static void main(String[] args) 
+  {
+   try {
+       throw new FileNotFoundException("");
+       }
+   catch (FileNotFoundException ex)
+      {
+         System.out.println("book list not found!");
+         throw ex; 
+           }
+       } 
+   }	                                                                      //Runtime Error	
+----------------------------------------------------------
+3  Find the output of the Program
+    import java.io.*;
+     class Test46 {
+        public static void main(String[] args) throws IOException {
+           methodA();
+       }
+         public static void methodA() throws Exception {
+          System.out.println("Completed..");
+          } }	                                                             // Compilation error
+-----------------------------------------------------------------	
+4  Find the output of the Program
+ public class a87 {
+    public static void main(String[] argv) {
+    try {
+      throw new OutOfMemoryError();
+      System.out.println("Success");
+      }
+    catch (Exception e) {
+      System.out.println("General exception");
+       }
+    finally {
+     System.out.println("Doing finally part");
+        } 
+     System.out.println("Carrying on");
+    } }                                                                    // Doing finally part
+------------------------------------------------------------------------
+5 Find the output of the Program
+  class Test44 {
+   public static void main(String[] args) throws Exception {
+      methodA();
+   }
+ public static void methodA() throws Exception {
+    System.out.println("Completed..");
+ } }	                                                                // Completed..
+-----------------------------------------------------------------
+6 Find the output of the Program
+ class Test43 {
+   public static void main(String[] args) {
+    methodA();
+   }
+   public static void methodA() throws Exception {
+   System.out.println("Completed..");
+   } }	
+--------------------------------------------------------------
+7  Which of the following is true about try-catch blocks in Java?
+  // A try block can be followed by multiple catch blocks.
+-------------------------------------------------------------
+8 import java.io.FileNotFoundException;
+ public class Test {
+  public static void main(String[] argv) throws Exception {
+   try 
+    {
+     throw new FileNotFoundException("");
+    }
+   catch (FileNotFoundException ex) 
+    {
+    System.out.println("book list not found!");
+     throw ex;
+     } } }	                                                   // book list not found! is printed, then an exception is shown
+------------------------------------------------------------------------------------
+9 What is the correct order of try, catch, and finally blocks in a Java program?
+ 	//a) try, catch, finally
+---------------------------------------------------
+10 Find the output of the Program 
+ class ExceptionTest {
+   public static void main(String[] args) {
+   Exception e1 = new ArithmeticException("Number is divided by zero");
+   System.out.println(e1);
+   Exception e2 = new ArrayIndexOutOfBoundsException("Array is out of limit");
+   System.out.println(e2);
+    } }	
+-----------------------------------------
+11 Which of the following methods prints the exception's stack trace?
+   //c) printStackTrace()
+----------------------------------
+12 Find the output of the Program 
+  public class a110 {
+   public static void main(String[] args) {
+   try {
+       throw new java.io.IOException();
+    }
+    catch (java.io.IOException exc) {
+     System.err.println("In catch IOException: "+exc.getClass());
+      throw new RuntimeException();
+      }
+    catch (Exception exc) {
+       System.err.println("In catch Exception: "+exc.getClass());
+      }
+    finally {
+      System.err.println("In finally");
+        } } }	
+----------------------------------------------------
+13 Find the output of the Program
+  public class a105 {
+    static String s = "-";
+    public static void main(String[] args) {
+   try {
+     throw new Exception();
+    }
+   catch (Exception e) {
+    try
+   {
+       try
+        {
+         throw new Exception();
+        }
+      catch (Exception ex)
+       {
+       s += "ic ";
+        }
+        throw new Exception();
+       }
+  catch (Exception x)
+  {
+     s += "mc ";
+  }
+   finally { s += "mf "; 
+  }
+  }
+  finally {
+  s += "of ";
+   }
+  System.out.println(s);
+   }
+ }	b) -ic mc mf of		
+---------------------------------------------------
+14 What does the getMessage() method in an exception class do?	
+ b) Returns the error message of the exception.
+----------------------------------------------------------
+15 Find the output of the Program
+  public class a103 {
+  static String s = "";
+ public static void main(String[] args) {
+  try 
+ {
+   s += "1"; throw new Exception();
+   } 
+ catch (Exception e) {
+  s += "2";
+   }
+ finally {
+  s += "3";
+ doStuff();
+ s += "4";
+  }
+ System.out.println(s);
+ }
+ static void doStuff() {
+ int x = 0;
+ int y = 7/x;
+ } }	b) 123 Exception in thread "main" java.lang.ArithmeticException: / by zero
+-----------------------------------------------------------------------------------------
+16 Find the output of the Program 
+public class Test40{ 
+  public static void main(String[] args) throws Exception {
+   System.out.println("Enter main()");
+   try { methodA(); }
+   catch (Exception e) { System.out.println(e); }
+   System.out.println("Exit main()"); }
+   public static void methodA() throws Exception {
+   System.out.println("Enter methodA()");
+    methodB();
+     System.out.println("Exit methodA()");
+   }
+  public static void methodB() throws Exception {
+  System.out.println("Enter methodB()");
+   methodC();
+  System.out.println("Exit methodB()");
+  }
+   public static void methodC() throws Exception {
+   System.out.println("Enter methodC()");
+   System.out.println(1/0);
+   System.out.println("Exit methodC()");
+   } }
+ *Ans a) Enter main() Enter methodA() Enter methodB() Enter methodC() java.lang.ArithmeticException: / by zero Exit main()
+-----------------------------------------------------------------------------------------------------------------------------------	
+17 Can a try block exist without a catch block?
+   a) Yes, if it is followed by a finally block.
+-----------------------------------------------------
+18 Which of the following is an unchecked exception?
+   c) NullPointerException
+----------------------------------------------------------
+19 What type of exceptions does the java.lang.Error class represent?
+   b) Unchecked exceptions that indicate serious problems.
+----------------------------------------------------------------------
+20 Find the output of the Program 
+  class InnerTry
+  {
+  public static void main(String[] args)
+  {
+  try {
+      String s=null;
+      System.out.println(s.length());
+      }
+  catch (NullPointerException np) 
+     {
+      System.out.println("Null Problem");
+        try {
+             String s="xyz";
+             int no=Integer.parseInt(s);
+             System.out.println(no);
+              }
+        catch (NumberFormatException nf) {
+              System.out.println("Number Format Problem");
+              }
+             }
+            System.out.println("Completed");
+        }  }	
+	*Ans: a) Null Problem Number Format Problem Completed	
+------------------------------------------------------------------------
+21 Find the output of the Program
+  class ExceptionPropogation {
+   public static void main(String[] args) {
+      System.out.println("Main method started");
+      m1();
+      System.out.println("Main method ended");
+      }
+     public static void m1() {
+     try {
+        m2();
+        } 
+     catch (Exception e) {
+	 System.out.println("Handled in m1");
+	 } }
+	 public static void m2() { m3();
+	 }
+	 public static void m3() { 
+	 System.out.println(10/0);
+	 } }	
+	*Ans :a) Main method started Handled in m1 Main method ended
+---------------------------------------------------------------------------------
+22 Find the output of the Program
+ import java.io.FileNotFoundException;
+ public class a60 {
+   public static void main(String[] argv) throws Exception 
+	{
+	 try 
+	{
+	 throw new FileNotFoundException("");
+	 }
+	 catch (FileNotFoundException ex)
+	 {
+ 	 System.out.println("book list not found!");
+	throw ex; 
+ } }	
+  * Ans:b) book list not found! Exception in thread "main" java.io.FileNotFoundException
+----------------------------------------------------------------------------------------------
+23 What is the superclass of all exceptions in Java?
+  
+---------------------------------------------------------------
+24 Find the output of the Program
+   public class Test47
+ { 
+ public static void main(String [] args)
+  {  
+ String test="no";
+  try 
+    {
+     System.out.println("Start try");
+     doRisky(test);
+      System.out.println("End try");
+    }
+  catch (Exception e)
+   { 
+   System.out.println("Exception Handled");
+    }
+ finally {
+  System.out.println("Finally");
+  }
+   System.out.println("End of main");
+   }
+ static void doRisky(String test) throws Exception 
+{
+ System.out.println("Start risky");
+  if("yes".equals(test)) 
+ {
+ throw new Exception();
+ }
+  System.out.println("End Risky");
+  return;
+  } }
+ *Ans :b) Start try Start risky End Risky End try Finally End of main
+--------------------------------------------------------------------------------
+25 Which keyword is used to manually throw an exception?
+  b) throw
+-------------------------------------------------------------
+26 
+import java.io.StreamCorruptedException; 
+import java.net.MalformedURLException;
+ public class a86
+ {
+ public static void main(String[] argv)
+ {
+ try
+ {
+ throw new MalformedURLException("bad url");
+ throw new StreamCorruptedException("bad file");
+ throw new Exception("bad");
+ System.out.println("Success");
+ }
+ catch (MalformedURLException e)
+ {
+ System.out.println("Bad URL");
+ }
+ catch (StreamCorruptedException e)
+ {
+ System.out.println("Bad file contents");
+ }
+ catch (Exception e)
+ {
+ System.out.println("General exception");
+ }
+ finally
+ {
+ System.out.println("Doing finally part");
+ }
+ System.out.println("Carrying on");
+ }
+ }	*Ans Compilation error		
+----------------------------------------------------------
+27 Which of the following blocks will execute even if an exception occurs?
+   c) finally
+---------------------------------------------------------------------------
+28 What is the purpose of the try-catch-finally structure?
+   b) To allow a program to continue running after an exception occurs and handle the resources.
+---------------------------------------------------------------------------------------------------
+29
+ public class a87
+ {
+ public static void main(String[] argv)
+ {
+ try
+ {
+ throw new OutOfMemoryError();
+ }
+ catch (Exception e)
+ {
+ System.out.println("General exception");
+ }
+ finally
+ {
+ System.out.println("Doing finally part");
+ }
+ System.out.println("Carrying on");
+ }
+ }
+ *Ans: Doing finally part
+-------------------------------------------------------
+30 Which block must always be associated with a try block?
+   c) Either catch or finally
+--------------------------------------------------------------
+31 What happens when an exception occurs in a try block and there is no matching catch block?
+   c) The exception is propagated to the calling method.
+---------------------------------------------------------------
+32 Find the output of the Program
+ public class Test48
+ {
+  public static void main(String [] args)
+  {
+  String test="yes";
+  try
+ {
+ System.out.println("Start try");
+ doRisky(test);
+ System.out.println("End try");
+ }
+  catch (Exception e)
+  {
+  System.out.println("Exception Handled");
+  }
+  finally
+  {
+ System.out.println("Finally");
+ }
+ System.out.println("End of main");
+ }
+ static void doRisky(String test) throws Exception
+ {
+ System.out.println("Start risky");
+ if("yes".equals(test))
+ { 
+ throw new Exception();
+ }
+ System.out.println("End Risky");
+ return;
+ }
+ }
+*Ans : Start try Start risky Exception Handled Finally End of main
+--------------------------------------------------------------------------
+33 What happens when an exception is caught in a catch block?
+*Ans:
+--------------------------------------------------------------------------
+34  What is the purpose of the finally block in exception handling?
+ *Ans: To execute code regardless of an exception being thrown.
+----------------------------------------------------------------------
+35 What will happen if an exception is not caught in a Java program?
+ *Ans:  The program will terminate abruptly.

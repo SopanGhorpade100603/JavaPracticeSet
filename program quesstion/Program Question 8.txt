@@ -1,0 +1,103 @@
+1)Define a method which returns true if the given three digit number is palindrome otherwise return false.
+
+
+
+Write the method with the following specifications: 
+
+
+
+Name of method : isPalindrome()
+
+   Modifiers : public, static
+
+  return type : boolean
+
+   Argument : one argument of type integer
+
+
+
+This method accepts an integer value as argument and 
+
+return true if the given number is palindrome, else retrun false.
+
+
+=========================================================================================================================
+
+Q2)
+Define a method which returns the greatest number among three numbers.
+
+
+
+Write the method with the following specifications: 
+
+
+
+Name of method : getGretest()
+
+   Modifiers : public, static
+
+  return type : int
+
+   Argument : three arguments of type integer  
+
+
+
+This accepts Three integer values as argument and return the greatest value.
+
+
+
+Arguments: three arguments of type integer
+
+Return Type: an integer value 
+
+
+
+Specifications: The value returned by the method getGreatest() is determined by the following rules:
+
+
+
+if any of the given numbers are negative, return -1.
+
+if any of the given numbers are zero, return -2.
+
+if the given numbers are positive, return the greatest.
+
+=============================================================================================
+
+Q3)
+Define a method which returns the sum of digits of the given two digit number.
+
+
+
+Write the method with the following specifications: 
+
+Name of the BLC class:TwoDigitsSum
+
+Name of method: getSumOfDigits()
+
+Access Modifier : public, static
+
+Arguments: one argument of type integer
+
+Return type: int
+
+
+
+This method accepts an integer value as argument and return the sum of it's digits.
+
+
+
+Specifications: The value returned by the method getSumOfdigits() is determined by the following rules:
+
+
+
+if the given value is in between 10 and 99, return sum of it's digits. Example: if x = 34, return 7
+
+if the given value is negative, return -3
+
+if the given value is greater than 99, return -2
+
+if the given value is in between 0 and 9, return -1
+
+
+

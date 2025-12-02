@@ -1,0 +1,664 @@
+Q1) What is the main responsibility of the ClassLoader in JVM?
+a) Executing bytecode
+b) Loading class files into memory
+c) Managing garbage collection
+d) Compiling Java code to bytecode
+
+
+ans b) loading class files into memory
+
+
+Q2) The Java Heap Memory is used for storing:
+a) Primitive local variables
+b) Objects and instance variables
+c) Method calls
+d) Class definitions
+
+
+ans  b)object ad instance variable
+
+
+Q3) Which part of the JVM executes Java bytecode?
+a) Just-In-Time (JIT) Compiler
+b) Java Virtual Machine (JVM) Interpreter
+c) Java Development Kit (JDK)
+d) Java Runtime Environment (JRE)
+
+
+ans b) Java Virtual Machine (JVM) Interpreter.
+
+
+Q4) What is the purpose of the Just-In-Time (JIT) compiler in JVM?
+a) Convert Java source code into bytecode
+b) Interpret bytecode one instruction at a time
+c) Convert bytecode into native machine code at runtime
+d) Load Java classes into memory
+
+
+ans c) Convert bytecode into native machine code at runtime.
+
+
+Q5) Which of the following is the highest-level class loader in the JVM hierarchy?
+a) System ClassLoader
+b) Bootstrap ClassLoader
+c) Extension ClassLoader
+d) Custom ClassLoader
+
+
+ans b) Bootstrap ClassLoader
+
+
+Q6) Which of the following class loaders loads classes from CLASSPATH?
+a) Bootstrap ClassLoader
+b) Extension ClassLoader
+c) System (Application) ClassLoader
+d) Native Method ClassLoader
+
+
+ans c) System (Application) ClassLoader
+
+
+Q7) What is the output of the following code?
+
+public class Test 
+{
+    public static void main(String[] args)
+    {
+         System.out.println(String.class.getClassLoader());
+    }
+}   
+a) null
+b) Bootstrap ClassLoader
+c) AppClassLoader
+d) Exception at runtime
+
+
+ans a) null
+
+
+Q8) What is the output of the following code?
+
+public class Test 
+{
+    public static void main(String[] args)
+    {
+        System.out.println(Test.class.getClassLoader());
+    }
+}
+
+a) null
+b) Bootstrap ClassLoader
+c) AppClassLoader
+d) PlatformClassLoader
+
+
+ans c) AppClassLoader
+
+
+Q9) What is the output of the following code?
+
+public class Test 
+{
+    public static void main(String[] args)
+    {
+        System.out.println(Test.class.getClassLoader().getParent());
+    }
+}
+
+a) null
+b) Bootstrap ClassLoader
+c) AppClassLoader
+d) PlatformClassLoader
+
+
+ans d) PlatformClassLoader
+
+
+Q10) What is the output of the following code?
+
+public class Test
+{
+    public static void main(String[] args) throws ClassNotFoundException {
+        ClassLoader cl = ClassLoader.getSystemClassLoader();
+        Class cls = cl.loadClass("java.lang.String");
+        System.out.println(cls.getClassLoader());
+    }
+}
+
+a) null
+b) Bootstrap ClassLoader
+c) Exception at runtime
+d) System ClassLoader
+
+ans a) null
+=========================================================================
+Que-1) : What is the output of below program ?
+
+class Example19 
+{
+		static 
+		{
+			int x = 10;
+			Example19.x = x+x;
+		}
+
+		static int x;
+		
+		public static void main(String[] args) 
+		{
+			System.out.println("Class Level X : "+Example19.x);
+		}
+
+		static 
+		{
+			x = x + Example19.x;
+		}
+}
+
+	ans  "Class Level X : 40
+------------------------------------------------------
+Que-2) : What is the output of below program ?
+
+class Example20 
+{
+	static int a;
+	
+	public static void main(String[] args)
+	{
+		System.out.println(Example20.a); 
+		Example20.a = Example20.initialize();
+		System.out.println(Example20.a);
+	}
+
+	static int initialize() 
+	{
+		Example20.a = 50;
+		return 60;
+	}
+	
+}
+
+ans 	0
+	60
+------------------------------------------------------
+
+Que-3) : What is the output of below program ?
+
+package com.ravi.basic;
+
+class Example21 
+{
+	static int x = Example21.m1();
+
+	public static void main(String[] args) 
+	{
+		System.out.println(Example21.x);
+	}
+
+	static int m1() 
+	{
+		x = 10;
+
+		return Example21.m2();
+	}
+
+	static int m2() 
+	{
+		System.out.println(Example21.x); 
+		return 20;
+	}
+}
+
+ans	10
+	20
+------------------------------------------------------
+Que-4) : What is the output of below program ?
+
+class Example22
+{
+	static int x = 10;
+
+	public static void main(String[] args)
+	{
+		System.out.println(Example22.m1()+ x);
+	}
+
+	static int m1()
+	{
+		x = x + 100;
+		return x;
+	} 
+}
+
+ans 220
+------------------------------------------------------
+Que-5) : What is the output of below program ?
+
+class Example23   
+{
+	static int x = m1(); 
+
+	public static void main(String[] args) 
+	{
+		System.out.println(x);
+	}
+
+	static 
+	{
+		System.out.println(x);
+		x = x + 20;
+	}
+
+	static int m1() 
+	{
+		x = 50;
+		return m2();		
+	} 
+
+	static int m2() 
+	{
+		System.out.println(x);
+		return 100;
+	}
+}
+
+ans 	50
+	100
+	120
+------------------------------------------------------
+Que-6) : What is the output of below program ?
+
+class Example24   
+{
+	static 
+	{
+		a = m1();  
+	}
+
+	static int a = 80;  //80
+
+	public static void main(String[] args) 
+	{
+		System.out.println(a); //130
+	}
+
+	static 
+	{
+		a = a + m1();  // a = 80 + 50 
+	}
+
+	static int m1() 
+	{
+		a = 30;
+		return m2();
+	}
+
+	static int m2() 
+	{
+		System.out.println(a);
+		return a + 20;
+	}
+}	
+
+ans	30
+	30
+	130
+------------------------------------------------------
+Que-7) : What is the output of below program ?
+
+class Example25 
+{
+	static int a = 50;
+
+	public static void main(String[] args) 
+	{
+		int a = 60;
+		a = a;
+		System.out.println(a);
+		System.out.println(Example25.a); 
+	}
+}	
+
+ans	60
+	50
+------------------------------------------------------
+Que-8) : What is the output of below program ?
+
+class Test50 
+{ 
+	public static void main(String[] args) 
+	{ 
+		int x = 20; 
+		System.out.println(x); 
+	} 
+	static
+	{ 
+		int x = 10; 
+		System.out.print(x + " "); 
+	} 
+}
+
+ans 10 20
+------------------------------------
+Que-9) : What is the output of below program ?
+
+class Test51 
+{ 
+	int x = 10; 
+	public static void main(String[] args) 
+	{ 
+	  System.out.println(x); 
+	} 
+	static
+	{ 
+	  System.out.print(x + " "); 
+	} 
+}
+ans error if we want to print non-static variable in static block then we need to create a object
+
+-------------------------------------
+Que-10) : What is the output of below program ?
+
+class Test52 
+{ 
+	int x = 10; 
+	public static void main(String[] args) 
+	{ 
+		Test52 t1 = new Test52(); 
+		System.out.println(t1.x); 
+	} 
+	static
+	{ 
+		int x = 20; 
+		System.out.print(x + " "); 
+	} 
+}
+
+ans 20 10
+----------------------------------------------------------------------
+Que-11) : What is the output of below program ?
+
+class Test53 
+{ 
+	int x = 10; 
+	public static void main(String[] args) 
+	{ 
+	  System.out.println(x); 
+	} 
+	
+	static
+	{ 
+	  Test53 t = new Test53();	
+	  System.out.print(t.x + " "); 
+	} 
+}
+
+ans error
+-----------------------------------------------------------------------
+Que-12) : What is the output of below program ?
+
+public class Test54 
+{
+	int x = 10; //x = 10
+	public static void main(String[] args) 
+	{ 	 
+		Test54 obj = passObject(null);
+		System.out.println(obj.x); //NullPointerException
+	}
+	
+	static
+	{ 
+	  Test54 t = new Test54();	
+	  System.out.print(t.x + " "); //10
+	  passObject(t);
+	} 
+	
+	public static Test54 passObject(Test54 t1)  //t1 = null
+	{
+		return t1;
+		
+	}	
+}
+
+ans	10
+	NullPointerException
+------------------------------------------------------------------------
+Que-13) : What is the output of below program ?
+
+public class Example2
+{
+    int value = 50;
+
+    public static void main(String[] args) 
+    {
+        Example2 obj = getInstance();
+        System.out.println(obj.value);  
+    }
+
+    public static Example2 getInstance() 
+    {
+        return new Example2();
+    }
+}
+
+ans 50
+------------------------------------------------------------------------
+Que-14) : What is the output of below program ?
+
+public class Example2 
+{
+	static 
+    {
+    	 x = m1();
+        System.out.println(Example2.x);         
+    }
+
+    static int x = 100;
+    
+    static int m1() 
+    {
+    	System.out.println(x);
+        x = 40;
+        return x + 20;
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println(x);  
+    }
+}
+
+ ans	0
+	60
+	100
+------------------------------------------------------------------------
+Que-15) : What is the output of below program ?
+
+public class Example3 
+{
+    static int a = m1();  
+
+    static int m1() 
+    {
+        System.out.println("m1 called");
+        return 30;
+    }
+
+    static 
+    {
+        System.out.println("Static block executed");
+        a += 20;
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Final value of a: " + a);
+    }
+}
+
+ans	m1 called
+	static block excuted
+	final value of a = 50
+	
+------------------------------------------------------------------------
+Que-16) : What is the output of below program ?
+
+public class Example4 
+{
+    static int x = 10;
+
+    static 
+    {
+        System.out.println("Static Block 1: " + x);
+        x = m1();
+    }
+
+    static 
+    {
+        System.out.println("Static Block 2: " + x);
+        x += 5;
+    }
+
+    static int m1() 
+    {
+        System.out.println("m1 executed");
+        return 20;
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Main: x = " + x);
+    }
+}
+
+ans 	Static Block 1: 10
+	m1 excuted
+	static block 2: 20
+	main : x = 25
+------------------------------------------------------------------------
+Que-17) : What is the output of below program ?
+
+package com.ravi.basic;
+
+class ClassA 
+{
+    static int a = 5;
+
+    static 
+    {
+        System.out.println("Static Block :"+a);
+        a = 10;
+    }
+}
+
+public class Example5 
+{
+    static 
+    {
+        System.out.println("Example5 Static Block");
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Main Method");
+        System.out.println("Class A a :" + ClassA.a);
+    }
+}
+
+ans	Example5 static block
+	main method
+	static block a : 5
+	class A a: 10
+------------------------------------------------------------------------
+Que-18) : What is the output of below program ?
+
+public class Test 
+{
+    static 
+    {
+        System.out.println("Static Block");
+    }
+
+    {
+        System.out.println("Instance Block");
+    }
+
+    Test() 
+    {
+        System.out.println("Constructor");
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Main Method");
+        Test obj1 = new Test();
+        Test obj2 = new Test();
+    }
+}
+
+ans	static block
+	Main Method
+	instance block
+	Constructor
+	instance Block
+	constructor	
+------------------------------------------------------------------------
+Que-19) : What is the output of below program ?
+
+public class Example 
+{
+    {
+        System.out.println("Instance Block");
+    }
+
+    static 
+    {
+        System.out.println("Static Block");
+    }
+
+    public static void show() 
+    {
+        System.out.println("Static Method");
+        display();
+    }
+
+    public void display() 
+    {
+        System.out.println("Instance Method");
+    }
+
+    public static void main(String[] args) 
+    {
+        show();
+    }
+}
+
+ans	error because we are access non static method in static block without creating object
+------------------------------------------------------------------------
+Que-20) : What is the output of below program ?
+
+package com.ravi.basic;
+
+public class Test 
+{
+    static int x = 10;
+
+    {
+        x = 50;
+    }
+
+    static 
+    {
+        x = 30;
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println("Before Object Creation: " + x);
+        Test obj1 = new Test();
+        System.out.println("After Object Creation: " + x);
+    }
+}
+
+ans	Before Object Creation: 30
+	After Object creation: 50

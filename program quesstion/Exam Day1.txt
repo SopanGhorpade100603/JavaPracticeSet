@@ -1,0 +1,280 @@
+	
+1 what is the output of the below program?
+
+ class Temp { 
+Temp(double d) {
+ System.out.println(d*0+4);
+ } } 
+public class Test11 extends Temp { 
+public static void main(String[] args) {
+ Temp t = new Temp(4);
+ } }	
+----------------------------------------
+2 Which of the following is NOT a use of this keyword?
+
+3 Which class defines the toString() method by default?
+
+4 What will happen if you use this in a static method?	
+
+5 What happens if you do not define any constructor in your class?
+
+6 what is the relationship between the Person and Employee classe?
+
+ public class Person 
+{
+ private String name; 
+public Person(String name)
+ {
+ this.name = name; 
+ }
+ public String getName()
+ {
+ return name; 
+  } } 
+public class Employee extends Person 
+{
+ private double salary; 
+ public Employee(String name, double salary) 
+{ 
+super(name); 
+this.salary = salary; 
+}
+ public double getSalary() 
+{ 
+return salary;
+ } } 
+public class TestEmployee 
+{ 
+public static void main(String[] args) 
+{ 
+Employee emp = new Employee("John", 50000.0); 
+System.out.println("Employee Name: " + emp.getName()); 
+System.out.println("Employee Salary: " + emp.getSalary());
+ } }
+-----------------------------
+
+7 What is the output of the below program? 
+
+class Animal 
+{
+ Animal ()
+{
+ System.out.println("Animal");
+ } } 
+class Wild extends Animal
+ {
+ Wild() 
+{
+ System.out.println("Wild");
+ super();
+ } }
+ public class Test10 
+{ 
+public static void main(String[] args)
+{
+ Wild wild = new Wild();
+ } }
+-------------------------
+
+8 What is the widest valid returnType for methodA in line 3?
+
+ public class ReturnIt
+{
+ returnType methodA(byte x, double y) /* Line 3 */
+{ 
+ return (long)x / y * 2;
+ } }	
+--------------------
+
+9 Can subclass have more than one superclass?	
+
+10 What is a default constructor?
+	
+11 What is the meaning of the return data type void?
+
+12 What is the output of the below program? 
+
+public class Test21 
+{
+ Test21() 
+{
+ System.out.println("No param constructor");
+ }
+ Test21(int m,int n)
+{
+ System.out.println("param constructor m*n is : "+m*n);
+ }
+ public void m1() 
+{
+ this();
+ System.out.println("Test21 : m1() method");
+ }
+ public static void main(String[] args) 
+{ 
+ Test21 t1 = new Test21();
+ t1.m1();
+ } }	
+----------------------
+
+13what will be printed when the following program is run?
+
+ public class ParameterPass 
+{
+ public static void main(String[] args) 
+{
+ int i = 0;
+ addTwo(i++);
+ System.out.println(i);
+ }
+ static void addTwo(int i) { i += 2;
+ } } 
+---------------------------
+
+14 What is the return type of a method that does not return any value?
+
+15 Which of the following is NOT true about constructors?
+
+16	Which of the following is true about the new keyword?	
+
+17	What is the output of following code?
+
+ public class Test 
+{
+ public int a;
+ {
+ Test obj = new Test();
+ System.out.println(a);
+ }
+ public static void main(String[] args)
+ {
+ Test obj=new Test(); System.out.println(obj);
+ } }
+----------------------------------
+
+18 What is the output of the below program? 
+
+class T 
+{
+ int x = 23;
+ T() 
+{
+ x = 45;
+ } }
+ class Main 
+{
+ public static void main(String args[])
+{
+ T t1 = new T();
+ System.out.println(t1.x);
+ } }
+----------------------------------
+
+19 What does the this keyword refer to in Java?
+
+20 What is the purpose of the toString() method?
+
+21 How can you invoke a constructor from another constructor in the same class?
+
+22 What is inheritance in Java?	
+
+23 What is the output of below program?
+
+ class A 
+{ 
+ { 
+System.out.print(1 + " ");
+ } }
+ class B extends A 
+{ 
+ { 
+System.out.print(2 + " ");
+ } } 
+class C extends B 
+{
+ {
+ System.out.print(3 + " ");
+ } }
+ public class Test
+ { 
+public static void main(String[] args)
+ {
+ C c = new C();
+ } }
+-----------------------
+24 Which keyword is used to inherit a class in Java?	
+
+25 What will be the output of the program?
+
+ class Main 
+{
+ public static void main(String args[]) 
+{ 
+int t;
+ System.out.println(t);
+ } }
+-------------------------------------------
+
+26 Which of the following is true about constructors?
+
+27 If you create objects of both Dog and Cat classes and call their makeSound methods, what will be the output?
+
+ public class Animal { public void makeSound() 
+{
+ System.out.println("Animal makes a sound");
+ } }
+ public class Dog extends Animal 
+{
+ public void bark() 
+{
+ System.out.println("Dog barks");
+ } }
+ public class Cat extends Animal { public void meow() 
+{
+ System.out.println("Cat meows");
+ } }
+------------------------------------------
+
+28 Which statement is correct about this keyword?
+
+29 What is the advantage of IS-A relationship?	
+
+30 what is the output of below program?
+
+ class Animal 
+{
+ private String species;
+ Animal() 
+{
+ this("Unknown");
+ System.out.println("Animal no args constructor");
+ }
+ Animal(String species)
+ {
+ this.species = species;
+ System.out.println("Animal parameterized constructor: " + species);
+ }
+ public void display() 
+{
+ System.out.println("Species: " + species);
+ } }
+ class Dog extends Animal 
+{
+ private String breed;
+ Dog() 
+{
+ this("UnknownBreed");
+ System.out.println("Dog default constructor");
+ }
+ Dog(String breed)
+ {
+ super("Canine");
+ this.breed = breed;
+ System.out.println("Dog parameterized constructor: " + breed);
+ } }
+ public class Test{ public static void main(String[] args) 
+{
+ Dog myDog = new Dog();
+ myDog.display();
+ } }	
+--------------------------------------------
+Exam Result

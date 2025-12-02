@@ -1,0 +1,147 @@
+Assignment 01 :
+------------------
+Create a BLC class Rectangle
+ 
+Attributes :[Access modifier private]
+
+names	        datatypes
+--------	------------
+width           double-privatre
+height          double-private
+
+
+Implement a parameterized constructor that sets the instance variables width and height.
+
+Methods :
+
+both the method is [public and return type is double]
+
+Implement an instance method getArea() that returns the area of the rectangle. 
+
+Implement another instance method getPerimeter()that returns the perimeter of the rectangle. 
+
+Note : Don't use toString() method
+
+Take one Main class ELC class which is having main method,
+Create a Rectangle object with width 5 and height 10 and call
+the getArea() and getPerimeter() methods on it.
+
+
+Test Cases -1 :
+------------------
+Valid Case: width = 5, height = 10
+
+Sample Input: width = 5, height = 10
+
+Expected Output:
+
+Area: 50.0
+Perimeter: 30.0
+
+Test Cases -2 :
+------------------
+Invalid Case: Negative width
+
+Sample Input: width = -5, height = 10
+
+Expected Output:
+
+Error: Width and height must be non-negative.
+--------------------------------------------------------------------------
+Assignment 02 :
+---------------
+You are developing a task management application that allows users to create and manage their tasks efficiently. 
+
+Create a BLC class Task.
+
+Attributes :[Access modifier private]
+-------------------------------------
+name			data type
+-------			------------
+title			:String
+description	        :String
+priority		:String
+
+Acess modifier : private(for all variables)
+
+Parameterized Constructor: Initialize the task object all properties.
+
+Methods:
+Case 1 :
+[Return type of below methods is void and acess modifier is public]
+
+updateDescription(String newDescription): This method should update the description of the task.
+
+updatePriority(String newPriority): This method should update the priority level of the task.
+
+markAsCompleted(): This method should mark the task as completed.
+
+Methods:
+Case 2 :
+[Return type of below method should be non void and acess modifier is public]
+
+getTitle(): This method should return the title of the task.
+
+getDescription(): This method should return the description of the task.
+
+getPriority(): This method should return the priority level of the task.
+
+isCompleted(): This method should return true if the task is completed, and false otherwise.
+
+
+Create another class main which is having main method and instantiate the task object and execute the method.
+
+Test Cases :
+
+case -1
+---------
+Task Title: Finish Project
+Task Description: Complete documentation
+Task Priority: High
+Is Task Completed? false
+
+
+case-2
+---------
+Title: ""
+Description: "Complete documentation"
+Priority: "High"
+
+Expected Output: 
+Error message indicating invalid title.[use isEmpty() to validate String]
+
+case-3
+--------
+Title: "Finish Project"
+Description: ""
+Priority: "High"
+
+Expected Output: 
+Error message indicating invalid description
+-------------------------------------------------------------------------
+Assignment 03 :
+---------------
+Create a BLC class Student.
+
+Fields/Attributes [Access modifier must be private]
+
+name (String): The name of the student.
+age (int): The age of the student.
+grade (String): The grade of the student.
+
+In addition to these attributes, implement the following:
+
+Static Method: Create a static method called createStudent() in the Student class. This method should:
+
+Prompt the user to enter values for name, age, and grade.
+Initialize a new Student object with the provided values.
+Return the created Student object.
+
+Implement a toString() to the Student class, which prints the student's details in the format: "Name: <name>, Age: <age>, Grade: <grade>".
+
+Create a ELC class TestStudent
+Main Method: In the main method, write code to:
+
+Ask the user for the number of Student objects they want to create.
+Use a loop to call the createStudent() method the specified number of times, 
+After creating all Student objects, use a loop to display the details of each student using the toString method.
