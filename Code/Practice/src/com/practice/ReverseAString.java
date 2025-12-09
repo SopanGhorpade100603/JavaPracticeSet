@@ -19,8 +19,8 @@ public class ReverseAString {
 //	}
 	
 	private static void reverseString(String str) {
-		StringBuilder sb = new StringBuilder(str);
-		String rev = sb.reverse().toString();
+//		StringBuilder sb = new StringBuilder(str);
+		String rev = new StringBuilder(str).reverse().toString();
 		System.out.println(rev);
 	}
 

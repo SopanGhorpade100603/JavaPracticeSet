@@ -5,18 +5,17 @@ import java.util.Scanner;
 public class PrimeNumber {
 
 	public static boolean PrimeChecker(int num) {
-		int count = 0;
+		if(num <2) {
+			return false;
+		}
+		
 		for (int i = 2; i < num; i++) {
 			if (num % i == 0) {
-				count++;
+				return false;
 			}
 		}
-//		if (count == 0) {
-//			return true;
-//		} else {
-//			return false;
-//		}
-		return count <1;
+
+		return true;
 	}
 
 	public static void main(String[] args) {
@@ -25,6 +24,17 @@ public class PrimeNumber {
 		int num = sc.nextInt();
 		boolean primeChecker = PrimeChecker(num);
 		System.out.println(num + " is prime?: " + primeChecker);
+		
+		
+//		boolean isPrime = true;
+//		for (int i = 2; i <= Math.sqrt(num); i++) {
+//		    if (num % i == 0) {
+//		        isPrime = false;
+//		        break; 
+//		    }
+//		}
+//
+//		System.out.println(isPrime);
 
 	}
 
