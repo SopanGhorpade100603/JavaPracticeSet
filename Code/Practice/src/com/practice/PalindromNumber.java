@@ -1,6 +1,7 @@
 package com.practice;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class PalindromNumber {
 
@@ -21,16 +22,22 @@ public class PalindromNumber {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a number: ");
 		int num = sc.nextInt();
-		boolean palindrom = isPalindrom(num);
-		System.out.println(num + " is palindrom?: " + palindrom);
+	
+//		boolean palindrom = isPalindrom(num);
+//		System.out.println(num + " is palindrom?: " + palindrom);
 		
 		
-//		int num = 323;
-//		String str = String.valueOf(num);
+//	
+		String str = String.valueOf(num);
 //		String rev = new StringBuilder(str).reverse().toString();
 //		System.out.println(str.equals(rev) ? "Palindrome" : "Not Palindrome");
-		
-		sc.close();
+	
+//		using stream
+		boolean isPalindrom = IntStream.range(0, str.length()/2).
+							allMatch(i->str.charAt(i)==str.charAt(str.length()-i-1));
+		System.out.println(num + " is palindrom?: " + isPalindrom);
+	
+		sc.close();		
 	}
 
 }

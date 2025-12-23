@@ -1,5 +1,4 @@
 package com.practice;
-
 import java.util.Scanner;
 //write a code to reverse a String
 
@@ -17,10 +16,18 @@ public class ReverseAString {
 //			System.out.print(str.charAt(i)+" ");
 //		}
 //	}
-	
-	private static void reverseString(String str) {
+
+//	private static void reverseString(String str) {
 //		StringBuilder sb = new StringBuilder(str);
-		String rev = new StringBuilder(str).reverse().toString();
+//		String rev = new StringBuilder(str).reverse().toString();
+//		System.out.println(rev);
+//	}
+
+//	using stream api
+	private static void reverseString(String str) {
+		String rev = str.chars().
+				mapToObj(c->(char)c).
+									reduce("",(s,c)->c+s,(s1,s2)->s2+s1);
 		System.out.println(rev);
 	}
 
