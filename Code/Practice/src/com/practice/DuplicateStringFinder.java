@@ -17,6 +17,14 @@ public class DuplicateStringFinder {
 				System.out.print(k + " ");
 			}
 		});
+		
+//		System.out.print("Duplicate found: ");
+//		Set<String> set = new HashSet<>();
+//		for(String s: arr) {
+//			if(!set.add(s)) 
+//				System.out.print(s+" ");
+//		}
+	
 	}
 
 }

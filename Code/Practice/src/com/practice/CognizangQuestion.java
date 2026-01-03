@@ -16,7 +16,7 @@ public class CognizangQuestion {
 			}
 		}
 
-		System.out.println(character);
+		System.out.print(character);
 		System.out.println(number);
 
 	}
