@@ -19,13 +19,13 @@ public class Demo01 {
 		
 		System.out.println(Arrays.toString(arr));
 		
-//		creating array using inline initializer
+//		creating array using in-line initializer
 		int arr1[] = new int[] {1,2,3,4,5,6};
 		System.out.println(Arrays.toString(arr1));
 
 //		creating array using anonymous array
 		int arr2[] = {2,4,6,8,10};
 		System.out.println(Arrays.toString(arr2));
-
+		
 	}
 }

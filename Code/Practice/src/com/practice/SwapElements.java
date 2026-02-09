@@ -3,22 +3,24 @@ package com.practice;
 public class SwapElements {
 
 	public static void main(String[] args) {
-		int a=3;
-		int b=5;
-		System.out.println("before swapping: a="+a+" b= "+b);
-//		using 3rd variable
-//		int temp = a;
-//		a=b;
-//		b=temp;
+		int num1=10;
+		int num2=20;
+		System.out.println("before swapping:: "+num1+" : "+num2);
+//		using 3rd var
+//		int temp=num1;
+//		num1=num2;
+//		num2=temp;
 		
-//		without using 3rd variable
+//		without 3rd var;
+		num1 =num1+num2;
+		num2 =num1-num2;
+		num1 = num1-num2;
 		
-		a=a*b;
-		b= a/b;
-		a=a/b;
-		
-		System.out.println("after swapping: a="+a+" b= "+b);
-
+//		num1 = num1*num2;
+//		num2 = num1/num2;
+//		num1 = num1/num2;
+		System.out.println("after swapping:: "+num1+" : "+num2);
+	
 	}
 
 }

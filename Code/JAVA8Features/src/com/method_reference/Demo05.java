@@ -1,21 +1,31 @@
 package com.method_reference;
 
-import java.util.Arrays;
-import java.util.List;
-
-//constructor reference
-class Test3 {
-	public Test3(String str) {
-		System.out.println(str);
-	}
+@FunctionalInterface
+interface Worker {
+	void work();
 }
 
 public class Demo05 {
 	public static void main(String[] args) {
-		List<String> list = Arrays.asList("sopan", "raj", "kartik", "pawan");
-
-		list.forEach(Test3::new);
-
+//		lambda expression
+		Worker w1 = ()->System.out.println("worker in working");
+		w1.work();
+		
+//		method reference
+		Worker w2 = new Employee() :: work;
+		w2.work();
 	}
+}
 
+class Employee implements Worker{
+
+	@Override
+	public void work() {
+		System.out.println("employee is working");
+	}
+	
+	public void emp() {
+		System.out.println("Employee.emp()");
+	}
+	
 }

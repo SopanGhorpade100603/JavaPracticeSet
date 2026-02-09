@@ -16,9 +16,6 @@ public class WaysToFetchCollectionObj {
 		list.add("Kartik");
 		list.add("anurag");
 		list.add("Raj");
-		list.add("John");
-		list.add("Smith");
-		list.add("Devid");
 
 //		1.toString() 
 		System.out.println("\u001B[31m" + "1.by using ToString");
@@ -59,7 +56,7 @@ public class WaysToFetchCollectionObj {
 //		6.ListIterator interface   provide facility to forward + backward
 		System.out.println("\n" + "\u001B[36m" + "by using ListIterator interface");
 		ListIterator<String> listItr = list.listIterator();
-		
+	
 		System.out.println("forward direection");
 		while (listItr.hasNext()) {
 			System.out.println(listItr.next());

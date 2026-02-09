@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 //WAP to find the total number of pairs equals to the sum
+
 public class NumbersOfPairsequalsToSum {
 
 	public static void main(String[] args) {
@@ -25,11 +26,10 @@ public class NumbersOfPairsequalsToSum {
 			if (set.contains(diff)) {
 				pairs++;
 			}
-
 			set.add(num);
 		}
 		System.out.println("total no of pairs: " + pairs);
-
+		
 	}
 
 }

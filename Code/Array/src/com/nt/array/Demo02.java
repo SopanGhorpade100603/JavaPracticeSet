@@ -18,5 +18,6 @@ public class Demo02 {
 		
 		System.out.println("Array element: ");
 		System.out.println(Arrays.toString(arr));
+		sc.close();
 	}
 }

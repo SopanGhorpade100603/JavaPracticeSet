@@ -10,11 +10,12 @@ public class Factorial {
 		int num = sc.nextInt();
 		int temp = num;
 		long factorial = 1;
-		while (num != 0) {
+		while (num > 0) {
 			factorial *= num;
 			num--;
 		}
-		System.out.println("factorial of: " + temp + " is: " + factorial);
+		System.out.println("factorial of: " + temp + " is:: " + factorial);
+		sc.close();
 	}
 
 }

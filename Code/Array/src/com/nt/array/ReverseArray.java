@@ -9,11 +9,9 @@ public class ReverseArray {
 //		for (int i = arr.length - 1; i >= 0; i--) {
 //			System.out.print(arr[i] + " ");
 //		}
-//		
+		
 	List<Integer> asList = Arrays.asList(arr);
 	asList.reversed().forEach(System.out::println);
-
-
 
 	}
 }

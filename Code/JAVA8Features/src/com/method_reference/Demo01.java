@@ -1,31 +1,19 @@
 package com.method_reference;
 
-@FunctionalInterface
-interface Worker {
-	void work();
-}
+import java.util.ArrayList;
 
 public class Demo01 {
+
 	public static void main(String[] args) {
-//		lambda expression
-		Worker w1 = ()->System.out.println("worker in working");
-		w1.work();
-		
-//		method reference
-		Worker w2 = new Employee() :: work;
-		w2.work();
+		ArrayList<String> al = new ArrayList<>();
+		al.add("sopan");
+		al.add("ram");
+		al.add("ajay");
+		al.add("balaji");
+		al.add("vijay");
+//		arbitary method reference
+		al.sort(String::compareTo);
+		System.out.println(al);
 	}
-}
 
-class Employee implements Worker{
-
-	@Override
-	public void work() {
-		System.out.println("employee is working");
-	}
-	
-	public void emp() {
-		System.out.println("Employee.emp()");
-	}
-	
 }

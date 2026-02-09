@@ -2,19 +2,20 @@ package com.method_reference;
 
 import java.util.Arrays;
 import java.util.List;
-//static method reference
-class Test2{
-	public static  void print(String str) {
+
+//constructor reference
+class Test3 {
+	public Test3(String str) {
 		System.out.println(str);
 	}
 }
 
 public class Demo04 {
 	public static void main(String[] args) {
-		List<String> list = Arrays.asList("sopan","raj","kartik","pawan");
-		
-		list.forEach(Test2::print);
-		
+		List<String> list = Arrays.asList("sopan", "raj", "kartik", "pawan");
+
+		list.forEach(Test3::new);
+
 	}
 
 }

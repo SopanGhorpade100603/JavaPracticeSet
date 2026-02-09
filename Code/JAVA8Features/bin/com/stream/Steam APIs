@@ -1,0 +1,29 @@
+Stream APIs
+-> it is a predefined interface available in java.util.stream interface
+	- it was introduced in java8 
+	- it's represent a sequence of elements that can be proccess through
+	  functionally and declaratively way and allow parallel proccessing
+	- it support operation like map,filter,..and so on
+	- it is stream as a pipeline of data
+	 
+	 there are 2 type of stream 
+	 1. based on data type
+	 		i. reference stream
+	 			it works with collections objects List, Set
+	 
+		 	ii. primitive stream
+	 			it work on primitive type of array object to aviod autoboxing
+	 					i. intStream for int values
+	 					ii. LongStream for long values
+	 					iii. DoubleStream for double values
+	 
+	 2. based on execution mode
+		 	i. sequential stream
+		 	- it will convert collection object into stream object for data processign
+		 		that execute single thread at a time
+	 	
+		 	ii. parallel stream
+		 	- it will convert the collection object into stream object for data
+		 		proccessing that can accept multiple thread at a time
+	 
+	

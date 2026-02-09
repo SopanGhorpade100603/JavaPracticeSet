@@ -2,19 +2,20 @@ package com.nt.comparable;
 
 import java.util.Arrays;
 
-//sort the employee based on employee id[comparator]
+//sort the employee based on employee id[comparable]
 record Employee(Integer id, String name, Double salary) implements Comparable<Employee> {
 
 	@Override
 	public int compareTo(Employee e2) {
-		return Integer.compare(this.id(), e2.id());
+		return this.id().compareTo(e2.id());
 	}
 	
-//	to sort based on name
-//	@Override
-//	public int compareTo(Employee e2) {
-//	    return this.name().compareTo(e2.name());
-//	}
+	/*
+	 * to sort based on name
+	 * 
+	 * @Override public int compareTo(Employee e2) { 
+	 * return this.name().compareTo(e2.name()); }
+	 */
 	
 }
 

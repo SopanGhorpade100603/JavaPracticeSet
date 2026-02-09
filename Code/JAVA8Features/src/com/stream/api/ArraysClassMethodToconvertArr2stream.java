@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class ArraysClassMethodToconvertArr2stream {
 	public static void main(String[] args) {
 		int arr[] = { 1, 2, 3, 4, 5 };
-		IntStream stream = Arrays.stream(arr);
+		 IntStream stream = Arrays.stream(arr);
 //		stream.forEach(System.out::println);
 
 		String str[] = { "sopan", "raj", "john" };
