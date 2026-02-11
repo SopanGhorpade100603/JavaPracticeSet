@@ -33,9 +33,9 @@ public class DuplicateElementRemove {
 
 //		using stream
 		Arrays.stream(arr).
-						filter(n-> set.add(n)).
-											sorted().
-													forEach(System.out::println);
+						distinct().
+								   sorted().
+											forEach(System.out::println);
 		
 
 	}

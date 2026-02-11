@@ -9,7 +9,7 @@ output: 4 */
 public class FindLengthOfLongestSubarray {
 
 	public static void main(String[] args) {
-		int arr[] = { 10, 5, 2, 7, 1, 9};
+		int arr[] = { 10, 5, 2, 7, 1, 9 };
 		int k = 15;
 		int res = findLongestLength(arr, k);
 		System.out.println(res);
