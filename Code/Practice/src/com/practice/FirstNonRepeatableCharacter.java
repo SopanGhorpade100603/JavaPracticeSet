@@ -13,18 +13,18 @@ public class FirstNonRepeatableCharacter {
 		System.out.println("Enter a String: ");
 		String str = sc.nextLine();
 		nonRepeatableChar(str);
-
+		sc.close();
 	}
 
 	private static void nonRepeatableChar(String str) {
 		String result = "";
 		for (int i = 0; i < str.length(); i++) {
 			int count = 0;
-			
+
 			if (str.charAt(i) != ' ') {
-				
+
 				for (int j = 0; j < str.length(); j++) {
-					if (str.charAt(i) == str.charAt(j) && i!=j) {
+					if (str.charAt(i) == str.charAt(j) && i != j) {
 						count++;
 						break;
 					}

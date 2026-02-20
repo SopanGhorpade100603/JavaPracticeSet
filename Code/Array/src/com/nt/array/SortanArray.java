@@ -1,7 +1,6 @@
 package com.nt.array;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
+import java.util.*;
 
 public class SortanArray {
 

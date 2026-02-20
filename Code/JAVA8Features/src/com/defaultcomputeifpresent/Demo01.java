@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*it is default method of map interface available in java.util package, introduces in
-java8 , it will compute value only when key is already present, if key is not present
+java8, it will compute value only when key is already present, if key is not present
 then do nothing*/
 public class Demo01 {
 	public static void main(String[] args) {

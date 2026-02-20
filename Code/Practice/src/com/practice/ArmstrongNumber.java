@@ -23,6 +23,7 @@ public class ArmstrongNumber {
 			temp /= 10;
 		}
 		System.out.println(sum == num ? "armstrong" : "not a armstrong");
+		sc.close();
 	}
 
 }

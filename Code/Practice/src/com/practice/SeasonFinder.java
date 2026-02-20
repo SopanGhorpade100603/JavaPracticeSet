@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class SeasonFinder {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter a month number: ");
+		System.out.print("Enter a month number[1-12]: ");
 		int n = sc.nextInt();
 		String msg = seasonFinder(n);
 		System.out.println(msg);
+		sc.close();
 	}
 
 	private static String seasonFinder(int n) {

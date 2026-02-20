@@ -3,7 +3,7 @@ package com.nt.array;
 import java.util.Arrays;
 import java.util.OptionalInt;
 
-public class LargestelementinArray {
+public class LargestElementinArray {
 	public static void main(String[] args) {
 		 int arr[]={ 7, 2, 5, 1, 4};
 //			int max=Integer.MIN_VALUE;

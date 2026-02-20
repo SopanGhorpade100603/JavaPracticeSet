@@ -12,10 +12,7 @@ public class RemoveLeadingZeros {
 //		another approach
 		String result = String.valueOf(Integer.parseInt(str));
 		System.out.println(result);
-		
-		
-		
-		
+	
 	}
 
 }

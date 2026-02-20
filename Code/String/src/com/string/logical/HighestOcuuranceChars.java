@@ -29,7 +29,6 @@ public class HighestOcuuranceChars {
 		            result = ch;
 		        }
 		    }
-		    
 		    return result;
 	}
 

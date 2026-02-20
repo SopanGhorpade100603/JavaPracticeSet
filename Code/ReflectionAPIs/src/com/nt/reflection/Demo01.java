@@ -12,7 +12,6 @@ class Test {
 	private Test() {
 
 	}
-
 	private void dis() {
 
 	}

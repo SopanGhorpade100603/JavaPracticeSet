@@ -3,9 +3,9 @@ package com.string.logical;
 import java.util.HashSet;
 import java.util.Set;
 
-/*Write a program to print duplicate characters
-from the given String?
-Ex: Programming Output: r, g, m */
+	/* Write a program to print duplicate characters
+	from the given String?
+	Ex: Programming Output: r, g, m */
 
 public class DuplicateCharPrinter {
 
